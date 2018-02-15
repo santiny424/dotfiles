@@ -93,13 +93,13 @@ augroup END
 " TODO: this does not work on WSL on Windows 10
 " cursor shape
 " http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
-if exists('$TMUX')
-    let &t_SI = "<Esc>[3 q"
-    let &t_EI = "<Esc>[0 q"
-else
-    let &t_SI = "<Esc>]50;CursorShape=1x7"
-    let &t_EI = "<Esc>]50;CursorShape=0x7"
-endif
+" if exists('$TMUX')
+"     let &t_SI = "<Esc>[3 q"
+"     let &t_EI = "<Esc>[0 q"
+" else
+"     let &t_SI = "<Esc>]50;CursorShape=1x7"
+"     let &t_EI = "<Esc>]50;CursorShape=0x7"
+" endif
 
 " let &t_SI = "\<Esc>[6 q"
 " let &t_SR = "\<Esc>[4 q"

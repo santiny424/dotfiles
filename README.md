@@ -1,6 +1,6 @@
-Notes to configure vim + tmux
+vim + tmux
 
-Current bash is Linux subsystem on Windows 10
+Current bash is Windows Subsystem Linux (WSL)
 
 - Linux subsystem on Win10
 |- Enable Linux subsystem
@@ -9,10 +9,27 @@ Current bash is Linux subsystem on Windows 10
 	Use Molokai color for windows bash theme
 	color thems for WSL is from Windows CMD properties
 	https://github.com/Microsoft/console/releases/tag/1708.14008
-        https://github.com/Microsoft/console/tree/1708.14008/tools/ColorTool
+    https://github.com/Microsoft/console/tree/1708.14008/tools/ColorTool
+
 - Tmux
-|- theme
 |- shortcuts
+    https://robots.thoughtbot.com/a-tmux-crash-course
+    prefix is set to <C-a>
+  General
+    prefix + ?
+       list all available commands 
+  Session
+    tmux new -s session_name
+        creates a new tmux session named session_name
+    tmux attach -t session_name
+        attaches to an existing tmux session named session_name
+    tmux switch -t session_name
+        switches to an existing session named session_name
+    tmux ls
+        lists existing tmux sessions
+    tmux detach (prefix + d)
+        detach the currently attached session
+  Copy mode
 
 - VIM
 |- highlight: http://vim.wikia.com/wiki/Highlight_current_line
