@@ -35,6 +35,18 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 " ------------------------------------------------------------------
+" execute commands in tmux from vim directly
+Plugin 'benmills/vimux'
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
+
+" Run last command executed by VimuxRunCommand
+map <Leader>vl :VimuxRunLastCommand<CR>
+
+" Inspect runner pane
+map <Leader>vi :VimuxInspectRunner<CR>
+
+" ------------------------------------------------------------------
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -128,14 +140,26 @@ set expandtab " set expandtab on, the tab will be change to space automaticaly
 set ve=block " in visual block mode, cursor can be positioned where there is no actual character
 
 " enhance '<' '>' , do not need to reselect the block after shift it.
- vnoremap < <gv
- vnoremap > >gv
+vnoremap < <gv
+vnoremap > >gv
 
 " ==================================================================
 " Search
 " ==================================================================
+" ------------------------------------------------------------------
+" text search
 set showmatch " show matching paren
 set incsearch " do incremental searching
 set hlsearch " highlight search terms
 set ignorecase " set search/replace pattern to ignore case
 set smartcase " set smartcase mode on, If there is upper case character in the search patern, the 'ignorecase' option will be override.
+
+" ------------------------------------------------------------------
+" file search
+" :set path += 
+
+" ==================================================================
+" Shortcuts
+" ==================================================================
+"map <Leader>- :split<CR>
+"map <Leader>| :vsplit<CR>

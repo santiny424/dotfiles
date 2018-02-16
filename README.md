@@ -3,10 +3,9 @@
 configurations for vim + tmux
 
 # How to use
-
 ## tmux
-    prefix is set to <C-a>
 ### General
+    prefix is set to <C-a>
     prefix + ?
        list all available commands 
 ### Session
@@ -25,9 +24,7 @@ configurations for vim + tmux
 ## vim
 
 # How does it work
-
 ## Windows Subsystem Linux (WSL)
-
 - Enable Linux subsystem
 - Install Ubuntu from Windows store
 - Bash color/theme configuration
@@ -35,12 +32,9 @@ configurations for vim + tmux
 	color thems for WSL is from Windows CMD properties
 	https://github.com/Microsoft/console/releases/tag/1708.14008
     https://github.com/Microsoft/console/tree/1708.14008/tools/ColorTool
-
 ## Tmux
 - shortcuts
     https://robots.thoughtbot.com/a-tmux-crash-course
-
 ## VIM
 - highlight: http://vim.wikia.com/wiki/Highlight_current_line
 - line number: https://jeffkreeftmeijer.com/vim-number/#relative-line-numbers
--  
