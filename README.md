@@ -1,24 +1,15 @@
 vim + tmux
 
-Current bash is Windows Subsystem Linux (WSL)
+* Intro
 
-- Linux subsystem on Win10
-|- Enable Linux subsystem
-|- Install Ubuntu from Windows store
-|- Bash color/theme configuration
-	Use Molokai color for windows bash theme
-	color thems for WSL is from Windows CMD properties
-	https://github.com/Microsoft/console/releases/tag/1708.14008
-    https://github.com/Microsoft/console/tree/1708.14008/tools/ColorTool
+* How to use
 
-- Tmux
-|- shortcuts
-    https://robots.thoughtbot.com/a-tmux-crash-course
+** tmux
     prefix is set to <C-a>
-  General
+*** General
     prefix + ?
        list all available commands 
-  Session
+*** Session
     tmux new -s session_name
         creates a new tmux session named session_name
     tmux attach -t session_name
@@ -29,7 +20,25 @@ Current bash is Windows Subsystem Linux (WSL)
         lists existing tmux sessions
     tmux detach (prefix + d)
         detach the currently attached session
-  Copy mode
+*** Copy mode
+
+** vim
+
+* How does it work
+
+** Windows Subsystem Linux (WSL)
+
+- Enable Linux subsystem
+- Install Ubuntu from Windows store
+- Bash color/theme configuration
+	Use Molokai color for windows bash theme
+	color thems for WSL is from Windows CMD properties
+	https://github.com/Microsoft/console/releases/tag/1708.14008
+    https://github.com/Microsoft/console/tree/1708.14008/tools/ColorTool
+
+** Tmux
+- shortcuts
+    https://robots.thoughtbot.com/a-tmux-crash-course
 
 - VIM
 |- highlight: http://vim.wikia.com/wiki/Highlight_current_line
