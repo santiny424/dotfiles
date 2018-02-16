@@ -1,15 +1,15 @@
-vim + tmux
 
-* Intro
+# Intro
+configurations for vim + tmux
 
-* How to use
+# How to use
 
-** tmux
+## tmux
     prefix is set to <C-a>
-*** General
+### General
     prefix + ?
        list all available commands 
-*** Session
+### Session
     tmux new -s session_name
         creates a new tmux session named session_name
     tmux attach -t session_name
@@ -20,13 +20,13 @@ vim + tmux
         lists existing tmux sessions
     tmux detach (prefix + d)
         detach the currently attached session
-*** Copy mode
+### Copy mode
 
-** vim
+## vim
 
-* How does it work
+# How does it work
 
-** Windows Subsystem Linux (WSL)
+## Windows Subsystem Linux (WSL)
 
 - Enable Linux subsystem
 - Install Ubuntu from Windows store
@@ -36,11 +36,11 @@ vim + tmux
 	https://github.com/Microsoft/console/releases/tag/1708.14008
     https://github.com/Microsoft/console/tree/1708.14008/tools/ColorTool
 
-** Tmux
+## Tmux
 - shortcuts
     https://robots.thoughtbot.com/a-tmux-crash-course
 
-- VIM
-|- highlight: http://vim.wikia.com/wiki/Highlight_current_line
-|- line number: https://jeffkreeftmeijer.com/vim-number/#relative-line-numbers
-|-  
+## VIM
+- highlight: http://vim.wikia.com/wiki/Highlight_current_line
+- line number: https://jeffkreeftmeijer.com/vim-number/#relative-line-numbers
+-  
