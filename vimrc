@@ -24,6 +24,8 @@ Plugin 'VundleVim/Vundle.vim'
 " ------------------------------------------------------------------
 " Status bar
 Plugin 'vim-airline/vim-airline'
+let g:airline#extensions#tabline#enabled = 1 " enable buffers display in tab
+let g:airline#extensions#tabline#buffer_nr_show = 1 " show buffer num
 
 " ------------------------------------------------------------------
 " same shortcuts for vim and tmux splits
@@ -49,6 +51,16 @@ map <Leader>vi :VimuxInspectRunner<CR>
 " ------------------------------------------------------------------
 " NerdTree
 Plugin 'scrooloose/nerdtree'
+
+" ------------------------------------------------------------------
+" auto complete
+Plugin 'Valloric/YouCompleteMe'
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+
+" ------------------------------------------------------------------
+"TODO: code snipets
+" http://blog.csdn.net/demorngel/article/details/69055363
+
 " ------------------------------------------------------------------
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -136,7 +148,6 @@ set backspace=indent,eol,start " allow backspacing over everything in insert mod
 set cinoptions=>s,e0,n0,f0,{0,}0,^0,:0,=s,l0,b0,g0,hs,ps,ts,is,+s,c3,C0,0,(0,us,U0,w0,W0,m0,j0,)20,*30
 " default '0{,0},0),:,0#,!^F,o,O,e' disable 0# for not ident preprocess
 " set cinkeys=0{,0},0),:,!^F,o,O,e
-
 set cindent shiftwidth=4 " set cindent on to autoinent when editing c/c++ file, with 4 shift width
 set tabstop=4 " set tabstop to 4 characters
 set expandtab " set expandtab on, the tab will be change to space automaticaly
@@ -159,7 +170,10 @@ set smartcase " set smartcase mode on, If there is upper case character in the s
 
 " ------------------------------------------------------------------
 " file search
-" :set path + = 
+set path +=.,**,
+" TODO remove specific directory per project
+" set path -=
+
 " netrw options
 let g:netrw_banner = 0 " do not use banner at the top
 let g:netrw_liststyle = 3 " use list style
@@ -167,5 +181,11 @@ let g:netrw_winsize = 30 " netrw window sizlet g:netrw_winsize = 30 " netrw wind
 " ==================================================================
 " Shortcuts
 " ==================================================================
+let mapleader = ","
+
 "map <Leader>- :split<CR>
 "map <Leader>| :vsplit<CR>
+
+" delete a buffer without closing the window
+map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>.
+
