@@ -22,7 +22,12 @@ configurations for vim + tmux
 ### Copy mode
 
 ## vim
-
+### netrw
+    R: rename
+    D: delete
+    %: create file
+    d: create a directory
+    :e. : return to initial directory 
 # How does it work
 ## Windows Subsystem Linux (WSL)
 - Enable Linux subsystem

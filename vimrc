@@ -47,6 +47,9 @@ map <Leader>vl :VimuxRunLastCommand<CR>
 map <Leader>vi :VimuxInspectRunner<CR>
 
 " ------------------------------------------------------------------
+" NerdTree
+Plugin 'scrooloose/nerdtree'
+" ------------------------------------------------------------------
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -156,8 +159,11 @@ set smartcase " set smartcase mode on, If there is upper case character in the s
 
 " ------------------------------------------------------------------
 " file search
-" :set path += 
-
+" :set path + = 
+" netrw options
+let g:netrw_banner = 0 " do not use banner at the top
+let g:netrw_liststyle = 3 " use list style
+let g:netrw_winsize = 30 " netrw window sizlet g:netrw_winsize = 30 " netrw window sizee
 " ==================================================================
 " Shortcuts
 " ==================================================================
