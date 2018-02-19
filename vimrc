@@ -41,10 +41,8 @@ nnoremap <c-l> <c-w>l
 Plugin 'benmills/vimux'
 " Prompt for a command to run
 map <Leader>vp :VimuxPromptCommand<CR>
-
 " Run last command executed by VimuxRunCommand
 map <Leader>vl :VimuxRunLastCommand<CR>
-
 " Inspect runner pane
 map <Leader>vi :VimuxInspectRunner<CR>
 
@@ -56,6 +54,10 @@ Plugin 'scrooloose/nerdtree'
 " auto complete
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_collect_identifiers_from_tags_files = 1 " only supported Exuberant ctags format
+" Ctags need to be called with --fields=+l
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " ------------------------------------------------------------------
 "TODO: code snipets
@@ -144,8 +146,9 @@ set si " smartindent
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 
 " indent options
+" TODO: need investigate what the option is
 " see help cinoptions-values for more details
-set cinoptions=>s,e0,n0,f0,{0,}0,^0,:0,=s,l0,b0,g0,hs,ps,ts,is,+s,c3,C0,0,(0,us,U0,w0,W0,m0,j0,)20,*30
+" set cinoptions=>s,e0,n0,f0,{0,}0,^0,:0,=s,l0,b0,g0,hs,ps,ts,is,+s,c3,C0,0,(0,us,U0,w0,W0,m0,j0,)20,*30
 " default '0{,0},0),:,0#,!^F,o,O,e' disable 0# for not ident preprocess
 " set cinkeys=0{,0},0),:,!^F,o,O,e
 set cindent shiftwidth=4 " set cindent on to autoinent when editing c/c++ file, with 4 shift width
@@ -171,21 +174,17 @@ set smartcase " set smartcase mode on, If there is upper case character in the s
 " ------------------------------------------------------------------
 " file search
 set path +=.,**,
-" TODO remove specific directory per project
+" TODO add/remove specific directory per project
 " set path -=
 
 " netrw options
 let g:netrw_banner = 0 " do not use banner at the top
 let g:netrw_liststyle = 3 " use list style
-let g:netrw_winsize = 30 " netrw window sizlet g:netrw_winsize = 30 " netrw window sizee
 " ==================================================================
 " Shortcuts
 " ==================================================================
 let mapleader = ","
 
-"map <Leader>- :split<CR>
-"map <Leader>| :vsplit<CR>
-
-" delete a buffer without closing the window
-map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>.
+" switch to previous buf and delete previous one
+map <leader>q :bp\|bd#<CR>.
 
