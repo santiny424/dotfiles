@@ -3,7 +3,7 @@ cp -f tmux.conf $HOME/.tmux.conf
 echo "Done"
 
 echo -n "Install YCM configuration..."
-cp -f ycm_extra_conf.py $HOME/.ycm_extra_conf
+cp -f ycm_extra_conf.py $HOME/.ycm_extra_conf.py
 echo "Done"
 
 echo -n "Install VIM configuration..."
