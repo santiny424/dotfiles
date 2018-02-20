@@ -22,6 +22,8 @@ configurations for vim + tmux
 ### Copy mode
 
 ## vim
+### General
+    <C-r>" : paste the yarked text in the command mode
 ### netrw
     R: rename
     D: delete
