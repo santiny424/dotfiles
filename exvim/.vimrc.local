@@ -33,3 +33,9 @@ augroup END
 set path +=.,**,
 " TODO add/remove specific directory per project
 " set path -=
+
+" ------------------------------------------------------------------
+" EUV project only functionalities
+" ------------------------------------------------------------------
+" organize NerdTree with only one sub folder opened
+"nmap <F5> :NERDTree<cr>jo<c-j>o

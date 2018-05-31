@@ -1,0 +1,10 @@
+- vim command shortcut to open the hpp/cpp file of a class
+- vim command to add a function definitions in CPP file
+- ccd command in VIM, jump to a component and sync NERDTreeFind
+    open NERDTree and open all subdirectories once
+    gf command improvement:
+    http://andrewradev.com/2016/03/09/building-a-better-gf-mapping/
+- g2d command
+- add autocomplete plugins
+- syntax check cannot find header files in the relative path
+-- Ignore DOB target if in the same component, otherwise refer to target folder

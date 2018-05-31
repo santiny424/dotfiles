@@ -1,12 +1,12 @@
-echo -n "Install TMUX configuration..."
-cp -f tmux.conf $HOME/.tmux.conf
+#!/bin/bash
+# this script installs exvim and tmux
+
+# exit on error
+set -e
+
+echo -n "Install exvim..."
+cp -f -r $HOME/exvim $HOME/exvim_bak
+cp -f -r exvim $HOME/exvim
 echo "Done"
 
-echo -n "Install YCM configuration..."
-cp -f ycm_extra_conf.py $HOME/.ycm_extra_conf.py
-echo "Done"
-
-echo -n "Install VIM configuration..."
-cp -f vimrc $HOME/.vimrc
-vim -E -u $HOME/.vimrc +qall
-echo "Done"
+./update.sh
