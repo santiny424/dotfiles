@@ -203,9 +203,10 @@ let tlist_actionscript_settings = 'actionscript;c:class;f:method;p:property;v:va
 " " let g:miniBufExplDebugMode  = 3
 " " let g:miniBufExplDebugLevel = 0
 
-" ex-autocomplpop: invoke when you input text
+" DISABLE: ex-autocomplpop: invoke when you input text
+" Use YouCompleteMe
 " ---------------------------------------------------
-Plugin 'exvim/ex-autocomplpop'
+"Plugin 'exvim/ex-autocomplpop'
 
 " ex-showmarks: invoke by m... or <leader>mm, <leader>ma
 " ---------------------------------------------------
@@ -350,9 +351,8 @@ let g:syntastic_javascript_checkers = ['eslint']
 " autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 " autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-" DISABLE: use ex-autocomplpop instead
-" " YouCompleteMe
-" Plugin 'Valloric/YouCompleteMe'
+" YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
 " " ---------------------------------------------------
 
 " TODO: choose a snippet plugin
