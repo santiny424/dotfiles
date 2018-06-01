@@ -5,6 +5,10 @@
 let g:mapleader = ","
 
 " ------------------------------------------------------------------
+" set shell to bash
+set shell=/bin/bash
+
+" ------------------------------------------------------------------
 "  Use exVim
 let g:exvim_custom_path='~/exvim'
 source ~/exvim/.vimrc
