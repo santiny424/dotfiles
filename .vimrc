@@ -10,5 +10,5 @@ set shell=/bin/bash
 
 " ------------------------------------------------------------------
 "  Use exVim
-let g:exvim_custom_path='~/exvim'
-source ~/exvim/.vimrc
+let g:exvim_custom_path='~/vim/exvim'
+source ~/vim/exvim/.vimrc
