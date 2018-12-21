@@ -1,0 +1,23 @@
+" This file will be loaded after .vimrc.plugins,
+" but before 'filetype plugin on', 'filetype indent on' and 'syntax on' been executed.
+" This file is designed to be safe to add your own plugins and plugins' configuration.
+
+" ------------------------------------------------------------------
+" same shortcuts for vim and tmux splits
+Plugin 'christoomey/vim-tmux-navigator'
+" Switch between splits
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" ------------------------------------------------------------------
+" execute commands in tmux from vim directly
+Plugin 'benmills/vimux'
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
+" Run last command executed by VimuxRunCommand
+map <Leader>vl :VimuxRunLastCommand<CR>
+" Inspect runner pane
+map <Leader>vi :VimuxInspectRunner<CR>
+
