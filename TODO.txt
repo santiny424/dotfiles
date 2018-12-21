@@ -1,10 +1,22 @@
-- vim command shortcut to open the hpp/cpp file of a class
-- vim command to add a function definitions in CPP file
+- add autocomplete plugins - DONE. Chosed clang_complete
+  YouCompleteMe: python version is too low on EUV VDI.
+  clang_complete: need libclang installation and config file
+-[codesnipt] vim command to add a function definitions in CPP file
 - ccd command in VIM, jump to a component and sync NERDTreeFind
     open NERDTree and open all subdirectories once
     gf command improvement:
     http://andrewradev.com/2016/03/09/building-a-better-gf-mapping/
-- g2d command
-- add autocomplete plugins
 - syntax check cannot find header files in the relative path
--- Ignore DOB target if in the same component, otherwise refer to target folder
+  Ignore DOB target if in the same component, otherwise refer to target folder
+- sync to devbench on VDI workspace
+  set_current_devbench: resolve the ip and store it
+  sync_to_dev <target> <remote path> // as root
+------------------------------------
+ccd to component, and start development there
+- path
+set path+=$PWD/**,
+- tags (global stuff, or component specific) -> triggered by make
+set tags+=tags
+set tags+=.tags
+set tags+=../tags
+- clang complete

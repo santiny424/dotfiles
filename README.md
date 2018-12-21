@@ -12,7 +12,7 @@ configurations for vim + tmux on bash
         creates a new tmux session named session_name
     tmux a -t session_name
         attaches to an existing tmux session named session_name
-    tmux switch -t session_name
+    tmux switch -t session_name (prefix + s)
         switches to an existing session named session_name
     tmux ls
         lists existing tmux sessions
@@ -55,6 +55,9 @@ configurations for vim + tmux on bash
     :!! repeasts the last command
     :silent !<cmd> : run command silently
     :r !<cmd> : save the output into the current buffer
+### commenter
+    <leader>cc: add comments to the lines
+    <leader>c<space>: remove comments
 ### netrw
     R: rename
     D: delete
@@ -63,11 +66,20 @@ configurations for vim + tmux on bash
     d: create a directory
     :e. : return to initial directory 
     :NERDTreeFind : find the current file in the tree
+### vimdiff
+    ]c : next difference
+    [c : previous difference
+    do : diff obtain from the other file
+    dp : diff put to the other file
+    zo : open folded text
+    zc : close folded text
+    :diffupdate : reload files
 
 ## GIT
     git branch -av: list all existing branches
     git checkout <branch> : switch to an existing branch
     git checkout -b <name> : create a new branch
+    git push origin <branch>: push to remote branch
     git push origin :<branch> : delete remote branch
     git branch -d <branch> : delete local branch
     git fech : download changes but not integrated into HEAD
@@ -84,24 +96,19 @@ configurations for vim + tmux on bash
 
 # How to set it up
 tmux can be installed via cadenv
+
 exvim can be installed by copy the complete exvim directory
-Reset terminal color palette and compatibility
 
 # References
 ## Tmux
 - shortcuts
     https://robots.thoughtbot.com/a-tmux-crash-course
-## VIM
+## exvim
+    https://exvim.github.io/
+## use vim as IDE
+    https://github.com/yangyangwithgnu/use_vim_as_ide
+## vim
 - highlight: http://vim.wikia.com/wiki/Highlight_current_line
 - line number: https://jeffkreeftmeijer.com/vim-number/#relative-line-numbers
 ## SVN
 - svn command shortcuts are in bashrc
-
-## Windows Subsystem Linux (WSL)
-- Enable Linux subsystem
-- Install Ubuntu from Windows store
-- Bash color/theme configuration
-	Use Molokai color for windows bash theme
-	color thems for WSL is from Windows CMD properties
-	https://github.com/Microsoft/console/releases/tag/1708.14008
-    https://github.com/Microsoft/console/tree/1708.14008/tools/ColorTool
