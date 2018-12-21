@@ -1,8 +1,3 @@
-echo -n "Update bash configuration..."
-cp -f $HOME/.bashrc $HOME/.bashrc_bak
-cp -f .bashrc $HOME/.bashrc
-echo "Done"
-
 echo -n "Update TMUX configuration..."
 cp -f $HOME/.tmux.conf $HOME/.tmux.conf_bak
 cp -f tmux.conf $HOME/.tmux.conf
