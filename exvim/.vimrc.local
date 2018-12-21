@@ -1,11 +1,21 @@
 " This file will be loaded at the end of .vimrc.
 " This file is designed to add your own vim scripts or override the exVim's .vimrc settings.
 
+" Escape insert mode easier
+:imap kj <Esc>
 " ------------------------------------------------------------------
 "  Overwirte existing exVim vimrc settings
 set cindent shiftwidth=4 " set cindent on to autoinent when editing c/c++ file, with 4 shift width
 set tabstop=4 " set tabstop to 4 characters
+set cursorline
 
+" ------------------------------------------------------------------
+"  shortcut for copy/paste
+"  yank to system clipboard
+vnoremap <Leader>y "+y
+" paste from system clipboard
+nmap <Leader>p "+p
+" ------------------------------------------------------------------
 " ------------------------------------------------------------------
 "  Disable beep sounds
 set noeb vb t_vb=
@@ -30,12 +40,7 @@ augroup END
 
 " ------------------------------------------------------------------
 " file search
-set path +=.,**,
-" TODO add/remove specific directory per project
-" set path -=
+set path+=$PWD/**,
+" set the tag files
+set tags+=${WORKSPACE_ROOT}/.cctags,${WORKSPACE_ROOT}/.alltags
 
-" ------------------------------------------------------------------
-" EUV project only functionalities
-" ------------------------------------------------------------------
-" organize NerdTree with only one sub folder opened
-"nmap <F5> :NERDTree<cr>jo<c-j>o

@@ -204,9 +204,8 @@ let tlist_actionscript_settings = 'actionscript;c:class;f:method;p:property;v:va
 " " let g:miniBufExplDebugLevel = 0
 
 " DISABLE: ex-autocomplpop: invoke when you input text
-" Use YouCompleteMe
 " ---------------------------------------------------
-"Plugin 'exvim/ex-autocomplpop'
+Plugin 'exvim/ex-autocomplpop'
 
 " ex-showmarks: invoke by m... or <leader>mm, <leader>ma
 " ---------------------------------------------------
@@ -298,9 +297,11 @@ xmap s <Plug>VSurround
 " ---------------------------------------------------
 Plugin 'scrooloose/nerdtree'
 
-let g:NERDTreeWinSize = 50
+let g:NERDTreeWinSize = 40
 let g:NERDTreeMouseMode = 1
 let g:NERDTreeMapToggleZoom = '<Space>'
+nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <F3> :NERDTreeFind<CR>
 
 " nerdcommenter: invoke by <leader>c<space>, <leader>cl, <leader>cu, <F11> or <C-F11>
 " ---------------------------------------------------
@@ -323,7 +324,7 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:syntastic_javascript_checkers = ['eslint']
 
 " DISABLE: use ex-autocomplpop instead
-" " neocomplcache: invoke when you insert words
+" neocomplcache: invoke when you insert words
 " Plugin 'Shougo/neocomplcache.vim'
 " " ---------------------------------------------------
 
@@ -331,10 +332,10 @@ let g:syntastic_javascript_checkers = ['eslint']
 " let g:neocomplcache_auto_completion_start_length = 2
 " let g:neocomplcache_enable_smart_case = 1
 " let g:neocomplcache_enable_auto_select = 1 " let neocomplcache's completion behavior like AutoComplPop
-" " let g:neocomplcache_disable_auto_complete = 1 " Enable this if you like TAB for complete
-" " inoremap <C-p> <C-x><C-u>
-" " inoremap <expr><TAB>  pumvisible() ? '\<Down>' : '<TAB>'
-" " inoremap <expr><S-TAB>  pumvisible() ? '\<Up>' : ''
+" let g:neocomplcache_disable_auto_complete = 1 " Enable this if you like TAB for complete
+" inoremap <C-p> <C-x><C-u>
+" inoremap <expr><TAB>  pumvisible() ? '\<Down>' : '<TAB>'
+" inoremap <expr><S-TAB>  pumvisible() ? '\<Up>' : ''
 
 " DISABLE: use ex-autocomplpop instead
 " " neocomplete: invoke when you insert words
@@ -351,8 +352,9 @@ let g:syntastic_javascript_checkers = ['eslint']
 " autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 " autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-" YouCompleteMe
-Plugin 'Valloric/YouCompleteMe'
+" DISABLE: YouCompleteMe
+" Plugin 'Valloric/YouCompleteMe'
+" let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 " " ---------------------------------------------------
 
 " TODO: choose a snippet plugin
@@ -446,6 +448,7 @@ let c_no_bracket_error = 1
 
 Plugin 'ntpeters/vim-better-whitespace'
 nnoremap <unique> <leader>w :StripWhitespace<CR>
+let g:strip_whitespace_on_save=1
 
 " ex-typescript
 " ---------------------------------------------------
