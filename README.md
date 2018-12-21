@@ -75,29 +75,9 @@ configurations for vim + tmux on bash
     zc : close folded text
     :diffupdate : reload files
 
-## GIT
-    git branch -av: list all existing branches
-    git checkout <branch> : switch to an existing branch
-    git checkout -b <name> : create a new branch
-    git push origin <branch>: push to remote branch
-    git push origin :<branch> : delete remote branch
-    git branch -d <branch> : delete local branch
-    git fech : download changes but not integrated into HEAD
-    git pull : download changes and directly integrated into HEAD
-    git push : publish local changes on a remote, such as commits
-    git remote set-url origin your_new_clone_url : add remote origin
-    git stash : stash away current local changes without commit (snapshot like)
-    git diff myfile.txt
-    git rm --cached <file> : remove file remotely ONLY
-    git diff --cached myfile.txt
-
-## SVN (EUV specific)
-    ws-status | grep ^.*C.*/workspace : find out all conflicted files
-
 # How to set it up
 tmux can be installed via cadenv
 
-exvim can be installed by copy the complete exvim directory
 
 # References
 ## Tmux
