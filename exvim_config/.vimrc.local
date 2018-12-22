@@ -5,8 +5,8 @@
 :imap kj <Esc>
 " ------------------------------------------------------------------
 "  Overwirte existing exVim vimrc settings
-set cindent shiftwidth=4 " set cindent on to autoinent when editing c/c++ file, with 4 shift width
-set tabstop=4 " set tabstop to 4 characters
+set cindent shiftwidth=3 " set cindent on to autoinent when editing c/c++ file, with 4 shift width
+set tabstop=3 " set tabstop to 4 characters
 set cursorline
 
 " ------------------------------------------------------------------
