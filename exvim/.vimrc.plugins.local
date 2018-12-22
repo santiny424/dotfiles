@@ -15,9 +15,21 @@ nnoremap <c-l> <c-w>l
 " execute commands in tmux from vim directly
 Plugin 'benmills/vimux'
 " Prompt for a command to run
-map <Leader>vp :VimuxPromptCommand<CR>
+nnoremap <Leader>vp :VimuxPromptCommand<CR>
 " Run last command executed by VimuxRunCommand
-map <Leader>vl :VimuxRunLastCommand<CR>
+nnoremap <Leader>vl :VimuxRunLastCommand<CR>
 " Inspect runner pane
-map <Leader>vi :VimuxInspectRunner<CR>
+nnoremap <Leader>vi :VimuxInspectRunner<CR>
+" Close the runner
+nnoremap <Leader>vc :VimuxCloseRunner<CR>
+
+" ------------------------------------------------------------------
+"  clang complete plugins
+"Plugin 'Rip-Rip/clang_complete'
+"let g:clang_library_path='/home/zqiaowei/.caddir/RHEL6/.caddata/clang/clang/lib/libclang.so.3.7'
+
+" ------------------------------------------------------------------
+" switch between .c* and .h* files
+Plugin 'ericcurtin/CurtineIncSw.vim'
+nnoremap <C-s> :call CurtineIncSw()<CR>
 

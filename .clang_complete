@@ -1,0 +1,3 @@
+-I $PWD/external/include
+-I $PWD/internal/include
+-I ${WORKSPACE_ROOT}/targets/include
