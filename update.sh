@@ -6,6 +6,5 @@ echo "Done"
 echo -n "Update VIM configuration..."
 cp -f $HOME/.vimrc $HOME/.vimrc_bak
 cp -f .vimrc $HOME/.vimrc
-cp -f exvim/.vimrc* $HOME/exvim/
 echo "Done"
 
