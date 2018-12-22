@@ -43,12 +43,12 @@ configurations for vim + tmux on bash
     <C-y> : move screen up one line
     <C-e> : move screen down one line
     u : undo last change
+    <leadr>u : advanced undo buffer
     <C-r> : redo last change
     :<C-r>" : paste the yarked text in the command mode
     :only : max current chosen window (delete all others! do this in NERDTree)
     :bufdo bd : close all buffers except this one
-    <C-s> : turn off flow control <C-q> : turn on flow control
-    :%s/foo/bar/gc
+    :%s/foo/bar/g : replace foo with bar in the whole file
 ### shell command
     :!<cmd> : run shell command
     :! : run the last external command from shell history

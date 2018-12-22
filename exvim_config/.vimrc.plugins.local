@@ -15,13 +15,13 @@ nnoremap <c-l> <c-w>l
 " execute commands in tmux from vim directly
 Plugin 'benmills/vimux'
 " Prompt for a command to run
-nnoremap <Leader>vp :VimuxPromptCommand<CR>
+nnoremap <Leader>r :VimuxPromptCommand<CR>
 " Run last command executed by VimuxRunCommand
-nnoremap <Leader>vl :VimuxRunLastCommand<CR>
-" Inspect runner pane
-nnoremap <Leader>vi :VimuxInspectRunner<CR>
+nnoremap <Leader>rr :VimuxRunLastCommand<CR>
+" Inspect runner panel
+"nnoremap <Leader>ir :VimuxInspectRunner<CR>
 " Close the runner
-nnoremap <Leader>vc :VimuxCloseRunner<CR>
+"nnoremap <Leader>kr :VimuxCloseRunner<CR>
 
 " ------------------------------------------------------------------
 "  clang complete plugins
