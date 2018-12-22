@@ -1,8 +1,5 @@
-# exvim standard files
+# exvim files
 exvim/
-!exvim/.vimrc.local
-!exvim/.vimrc.plugins
-!exvim/.vimrc.plugins.local
 
 # temp files
 *.swp

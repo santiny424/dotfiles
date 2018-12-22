@@ -1,3 +1,6 @@
+#!/bin/bash
+# update vim/tmux configuration files
+
 timestamp=$( date +%Y%m%d_%H%M%S )
 
 echo -n "Update TMUX configuration..."
@@ -7,6 +10,8 @@ echo "Done"
 
 echo -n "Update VIM configuration..."
 cp -f $HOME/.vimrc $HOME/.vimrc_${timestamp}
+cp -f exvim_config/.vimrc* exvim/
 cp -f .vimrc $HOME/.vimrc
 echo "Done"
+
 
