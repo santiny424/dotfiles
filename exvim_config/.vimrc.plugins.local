@@ -33,3 +33,7 @@ nnoremap <Leader>vc :VimuxCloseRunner<CR>
 Plugin 'ericcurtin/CurtineIncSw.vim'
 nnoremap <C-s> :call CurtineIncSw()<CR>
 
+" ------------------------------------------------------------------
+Plugin 'vim-airline/vim-airline-themes'
+
+let g:airline_theme='luna'
