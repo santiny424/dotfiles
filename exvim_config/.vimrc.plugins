@@ -282,6 +282,13 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " vim-fugitive: invoke most by :Gdiff
 " ---------------------------------------------------
 Plugin 'tpope/vim-fugitive'
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit -v -q<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>ge :Gedit<CR>
+nnoremap <leader>gr :Gread<CR>
+nnoremap <leader>gw :Gwrite<CR><CR>
+nnoremap <leader>gl :silent! Glog<CR>
 
 " vim-surround: invoke when you select words and press 's'
 " ---------------------------------------------------

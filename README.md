@@ -8,7 +8,7 @@ configurations for vim + tmux on bash
     prefix + ?
        list all available commands
 ### Session
-    tmux new -s session_name
+    tmux new -s session_name (prefix :new)
         creates a new tmux session named session_name
     tmux a -t session_name
         attaches to an existing tmux session named session_name
@@ -40,32 +40,36 @@ configurations for vim + tmux on bash
     zz : move current line to the middle
     zt : move current line to the top
     zb : move current line to the bottom
+    kj : exit insert mode
     <C-y> : move screen up one line
     <C-e> : move screen down one line
     u : undo last change
     <leadr>u : advanced undo buffer
-    <C-r> : redo last change
     :<C-r>" : paste the yarked text in the command mode
     :only : max current chosen window (delete all others! do this in NERDTree)
     :bufdo bd : close all buffers except this one
     :%s/foo/bar/g : replace foo with bar in the whole file
+
 ### shell command
-    :!<cmd> : run shell command
-    :! : run the last external command from shell history
-    :!! repeasts the last command
-    :silent !<cmd> : run command silently
-    :r !<cmd> : save the output into the current buffer
-### commenter
+    <leader>r : run command
+    <leader>rr : rerun last command
+
+### git support
+    :Gstatus : show git status (- to add/reset file)
+    :Gcommit : git commit
+    :Gdiff : diff the current file
+
+### commenter TODO: doxygen support
     <leader>cc: add comments to the lines
     <leader>c<space>: remove comments
+
+### code snipet TODO
+
 ### netrw
-    R: rename
-    D: delete
-    go: open a file but stay in NERDTree
-    %: create file
-    d: create a directory
-    :e. : return to initial directory 
-    :NERDTreeFind : find the current file in the tree
+    <F2> : open/close NERDTree
+    <F3> : find the current file in the tree
+    R: refresh the whole tree
+
 ### vimdiff
     ]c : next difference
     [c : previous difference
