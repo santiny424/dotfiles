@@ -6,7 +6,7 @@ configurations for vim + tmux on bash
 ### General
     prefix is set to <C-a>
     prefix + ?
-       list all available commands  
+       list all available commands
 ### Session
     tmux new -s session_name
         creates a new tmux session named session_name
