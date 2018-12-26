@@ -44,7 +44,6 @@ configurations for vim + tmux on bash
     <C-y> : move screen up one line
     <C-e> : move screen down one line
     u : undo last change
-    <leadr>u : advanced undo buffer
     :<C-r>" : paste the yarked text in the command mode
     :only : max current chosen window (delete all others! do this in NERDTree)
     :bufdo bd : close all buffers except this one

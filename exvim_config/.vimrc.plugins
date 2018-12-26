@@ -270,6 +270,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#whitespace#check(),0)}'
 " let g:airline_section_warning = ''
 
+" ---------------------------------------------------
 " DISABLE
 " ctrlp: invoke by <ctrl-p>
 " Plugin 'kien/ctrlp.vim'
@@ -279,16 +280,14 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:ctrlp_max_files = 0 " Unset cap of 10,000 files so we find everything
 " nnoremap <unique> <leader>bs :CtrlPBuffer<CR>
 
-" vim-fugitive: invoke most by :Gdiff
+" vim-fugitive: invoke most by :Gstatus
 " ---------------------------------------------------
 Plugin 'tpope/vim-fugitive'
 nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gc :Gcommit -v -q<CR>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>ge :Gedit<CR>
 nnoremap <leader>gr :Gread<CR>
 nnoremap <leader>gw :Gwrite<CR><CR>
-nnoremap <leader>gl :silent! Glog<CR>
 
 " vim-surround: invoke when you select words and press 's'
 " ---------------------------------------------------
@@ -374,27 +373,27 @@ let g:syntastic_javascript_checkers = ['eslint']
 " Plugin 'spf13/snipmate-snippets'
 " " ---------------------------------------------------
 
-" undotree: invoke by <Leader>u
+" DISABLE: undotree: invoke by <Leader>u
 " ---------------------------------------------------
-Plugin 'mbbill/undotree'
-
-nnoremap <leader>u :UndotreeToggle<CR>
-let g:undotree_SetFocusWhenToggle=1
-let g:undotree_WindowLayout = 4
-
-" NOTE: this will prevent undotree closed then jump to minibufexpl
-function! g:CloseUndotree()
-    call UndotreeHide()
-    call ex#window#goto_edit_window()
-endfunction
-
-function g:Undotree_CustomMap()
-    if has('gui_running')
-        nnoremap <silent> <script> <buffer> <ESC> :call g:CloseUndotree()<CR>
-    else
-        nnoremap <silent> <script> <buffer> <leader><ESC> :call g:CloseUndotree()<CR>
-    endif
-endfunction
+"Plugin 'mbbill/undotree'
+"
+"nnoremap <leader>u :UndotreeToggle<CR>
+"let g:undotree_SetFocusWhenToggle=1
+"let g:undotree_WindowLayout = 4
+"
+"" NOTE: this will prevent undotree closed then jump to minibufexpl
+"function! g:CloseUndotree()
+"    call UndotreeHide()
+"    call ex#window#goto_edit_window()
+"endfunction
+"
+"function g:Undotree_CustomMap()
+"    if has('gui_running')
+"        nnoremap <silent> <script> <buffer> <ESC> :call g:CloseUndotree()<CR>
+"    else
+"        nnoremap <silent> <script> <buffer> <leader><ESC> :call g:CloseUndotree()<CR>
+"    endif
+"endfunction
 
 " tabular: invoke by <leader>= alignment-character
 " ---------------------------------------------------
