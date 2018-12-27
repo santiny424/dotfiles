@@ -143,6 +143,8 @@
    set autoread   " reload file when changed outside of vim
    " Escape insert mode easier
    :imap kj <Esc>
+   " delete the buffer
+   nnoremap <leader>bd :bd<CR>
    " ------------------------------------------------------------------
    " turn off swap files
    set noswapfile
@@ -196,6 +198,9 @@
    " toggle folding with space
    nnoremap <space> za
    set wildmenu            " turn on wild menu, try typing :h and press <Tab>
+   " ignore those files. also applicable for ctrl-p plugins
+   set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+   set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
    set showcmd             " display incomplete commands
    " ------------------------------------------------------------------
    " highlight current line

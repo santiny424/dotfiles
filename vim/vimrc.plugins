@@ -40,18 +40,17 @@ Plugin 'vim-airline/vim-airline-themes'
 let g:airline_theme='luna'
 
 " ---------------------------------------------------
-" DISABLE
 " ctrlp: invoke by <ctrl-p>
-" Plugin 'kien/ctrlp.vim'
-" let g:ctrlp_working_path_mode = ''
-" let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
-" let g:ctrlp_follow_symlinks = 2
-" let g:ctrlp_max_files = 0 " Unset cap of 10,000 files so we find everything
-" nnoremap <unique> <leader>bs :CtrlPBuffer<CR>
+Plugin 'kien/ctrlp.vim'
+let g:ctrlp_working_path_mode = ''
+let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
+let g:ctrlp_follow_symlinks = 2
+let g:ctrlp_max_files = 0 " Unset cap of 10,000 files so we find everything
 
 " ---------------------------------------------------
 " vim-fugitive: invoke most by :Gstatus
 Plugin 'tpope/vim-fugitive'
+
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>ge :Gedit<CR>
@@ -59,14 +58,11 @@ nnoremap <leader>gr :Gread<CR>
 nnoremap <leader>gw :Gwrite<CR><CR>
 
 " ---------------------------------------------------
-" vim-surround: invoke when you select words and press 's'
+" vim-surround: invoke when you select words
+" and press 's' followed by the separator
 Plugin 'tpope/vim-surround'
 
 xmap s <Plug>VSurround
-
-" " ---------------------------------------------------
-" DISABLE
-" " Plugin 'tpope/vim-dispatch'
 
 " ---------------------------------------------------
 " nerdtree: invoke by :NERDTreeToggle
@@ -220,11 +216,6 @@ nnoremap <Leader>rr :VimuxRunLastCommand<CR>
 "nnoremap <Leader>ir :VimuxInspectRunner<CR>
 " Close the runner
 "nnoremap <Leader>kr :VimuxCloseRunner<CR>
-
-" ------------------------------------------------------------------
-"  clang complete plugins
-"Plugin 'Rip-Rip/clang_complete'
-"let g:clang_library_path='/home/zqiaowei/.caddir/RHEL6/.caddata/clang/clang/lib/libclang.so.3.7'
 
 " ------------------------------------------------------------------
 " switch between .c* and .h* files
