@@ -90,7 +90,9 @@ map <unique> <C-F11> <Plug>NERDCommenterUncomment
 " syntastic: invoke when you save file and have syntac-checker
 Plugin 'scrooloose/syntastic'
 
-" TODO: choose a code complete plugin
+" ---------------------------------------------------
+Plugin 'exvim/ex-autocomplpop'
+
 " " ---------------------------------------------------
 " DISABLE: use ex-autocomplpop instead
 " " neocomplcache: invoke when you insert words
