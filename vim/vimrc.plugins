@@ -25,8 +25,8 @@ else
     let g:airline_powerline_fonts = 0
 endif
 
-let g:airline#extensions#tabline#enabled = 1 " NOTE: When you open lots of buffers and typing text, it is so slow.
-let g:airline#extensions#tabline#buffer_nr_show = 1
+" let g:airline#extensions#tabline#enabled = 1 " NOTE: When you open lots of buffers and typing text, it is so slow.
+" let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:airline#extensions#tabline#show_buffers = 1
 " let g:airline#extensions#tabline#fnamemod = ':t'
 " let g:airline_section_b = "%{fnamemodify(bufname('%'),':p:.:h').'/'}"
