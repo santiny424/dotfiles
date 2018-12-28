@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export ORIGINAL_PATH=`pwd`
+current_path=$(pwd)
 echo ------------------------------------------
 echo "// Installing Vundle..."
 if [ ! -d "./vimfiles/" ]; then
@@ -24,7 +24,7 @@ fi
 
 echo ------------------------------------------
 echo "// Installing vim-plugins..."
-cd ${ORIGINAL_PATH}
+cd ${current_path}
 vim -u vimrc.plugins.minimal --cmd "set rtp=./vimfiles,\$VIMRUNTIME,./vimfiles/after" +PluginInstall +qall
 ret=$?
 if ! test "$ret" -eq 0; then
@@ -36,10 +36,13 @@ timestamp=$( date +%Y%m%d_%H%M%S )
 echo ------------------------------------------
 echo "// Installing vimrc files "
 if [ -f $HOME/.vimrc ]; then
-	echo "Found existing .vimrc. Moved to .vimrc_${timestamp}"
-	cp -f $HOME/.vimrc $HOME/.vimrc_${timestamp}
+   # check whether vimrc file is identical
+   is_identical=$(diff ".vimrc" "$HOME/.vimrc")
+   # if .vimrc file is identical then skip installation
+   if [ "$is_identical" != "" ]; then
+      echo "Found existing .vimrc. Moved to .vimrc_${timestamp}"
+      cp -f $HOME/.vimrc $HOME/.vimrc_${timestamp}
+   fi
 fi
 cp -f .vimrc $HOME/.vimrc
 
-echo ------------------------------------------
-echo "// Done"

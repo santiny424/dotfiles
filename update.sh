@@ -10,7 +10,6 @@ echo "Done"
 
 echo -n "Update VIM configuration..."
 cp -f $HOME/.vimrc $HOME/.vimrc_${timestamp}
-cp -f exvim_config/.vimrc* exvim/
 cp -f .vimrc $HOME/.vimrc
 echo "Done"
 
