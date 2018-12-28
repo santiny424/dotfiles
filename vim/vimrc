@@ -214,9 +214,6 @@
    :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
    :augroup END
    " ------------------------------------------------------------------
-   " tags
    " set path find/e command to include all the files and subdirectories
    set path+=$PWD/**,
-   " set the tag files
-   set tags+=${WORKSPACE_ROOT}/.cctags,${WORKSPACE_ROOT}/.alltags
 
