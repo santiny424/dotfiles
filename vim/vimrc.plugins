@@ -221,7 +221,7 @@ nnoremap <Leader>rr :VimuxRunLastCommand<CR>
 
 " ------------------------------------------------------------------
 " switch between .c* and .h* files
-Plugin 'ericcurtin/CurtineIncSw.vim'
+Plugin 'santiny424/CurtineIncSw.vim'
 nnoremap <C-s> :call CurtineIncSw()<CR>
 
 " ------------------------------------------------------------------
