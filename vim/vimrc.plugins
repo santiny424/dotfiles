@@ -224,4 +224,10 @@ nnoremap <Leader>rr :VimuxRunLastCommand<CR>
 Plugin 'ericcurtin/CurtineIncSw.vim'
 nnoremap <C-s> :call CurtineIncSw()<CR>
 
+" ------------------------------------------------------------------
+"  enable buffer kill without closing window
+Plugin 'qpkorr/vim-bufkill'
+" delete the buffer
+nnoremap <leader>bd :BD<CR>
+nnoremap <leader>bun :BUN<CR>
 

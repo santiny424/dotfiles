@@ -138,8 +138,6 @@
    set autoread   " reload file when changed outside of vim
    " Escape insert mode easier
    :imap kj <Esc>
-   " delete the buffer
-   nnoremap <leader>bd :bd<CR>
    " ------------------------------------------------------------------
    " turn off swap files
    set noswapfile
