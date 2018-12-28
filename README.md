@@ -54,9 +54,8 @@ configurations for vim + tmux on bash
     <leader>rr : rerun last command
 
 ### git support
-    :Gstatus : show git status (- to add/reset file)
-    :Gcommit : git commit
-    :Gdiff : diff the current file
+    <leader>gs :Gstatus show git status (- to add/reset file, C to trigger commit, <CR> to open file)
+    <leader>gd: git diff on the file
 
 ### commenter TODO: doxygen support
     <leader>cc: add comments to the lines
