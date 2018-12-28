@@ -9,7 +9,6 @@ let g:vim_tools_path = cwd.'/vimfiles/tools/'
 exec 'set rtp+=' . fnameescape ( cwd . '/vimfiles/bundle/Vundle.vim/' )
 call vundle#rc(cwd.'/vimfiles/bundle/')
 
-" =======================================================
 Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
@@ -20,6 +19,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
+Plugin 'exvim/ex-autocomplpop'
 Plugin 'godlygeek/tabular'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'vim-scripts/LargeFile'
@@ -27,6 +27,5 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'benmills/vimux'
 Plugin 'ericcurtin/CurtineIncSw.vim'
-" =======================================================
 
 filetype plugin indent on " required
