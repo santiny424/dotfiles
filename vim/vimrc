@@ -27,11 +27,6 @@
    "  remap leader key
    let g:mapleader = ";"
    " ------------------------------------------------------------------
-   "  reload vimrc files automaticaly
-   autocmd BufWritePost $MYVIMRC source $MYVIMRC
-   " also a shortcut to reload it manually
-   nnoremap <leader>RR :source $MYVIMRC<CR>
-   " ------------------------------------------------------------------
    " language and encoding setup
    " always use English menu
    " NOTE: this must before filetype off, otherwise it won't work
@@ -126,7 +121,7 @@
    set sidescrolloff=15
    set sidescroll=1
    set wrap          " wrap text
-   set linebreak     " wrap lines at convenient points
+   "set linebreak     " wrap lines at convenient points
    set ruler         " show the cursor position all the time
    set visualbell    " No sounds
    "  Disable beep sounds
