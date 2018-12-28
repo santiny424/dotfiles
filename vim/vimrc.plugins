@@ -25,6 +25,7 @@ else
     let g:airline_powerline_fonts = 0
 endif
 
+let g:airline#extensions#gutentags#enabled = 1
 " let g:airline#extensions#tabline#enabled = 1 " NOTE: When you open lots of buffers and typing text, it is so slow.
 " let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:airline#extensions#tabline#show_buffers = 1
@@ -231,3 +232,19 @@ Plugin 'qpkorr/vim-bufkill'
 nnoremap <leader>bd :BD<CR>
 nnoremap <leader>bun :BUN<CR>
 
+" ------------------------------------------------------------------
+"  ctags management
+Plugin 'ludovicchabant/vim-gutentags'
+" change default tag file name to better manage gutentags
+let g:gutentags_ctags_tagfile = '.gutentagsfile'
+" disable default project roots
+let g:gutentags_add_default_project_roots = 0
+" define own project root to only use git
+let g:gutentags_project_root = ['.git']
+" use .gutctags file to specify project specific settings for ctags options
+" :help gutentags-.gutctags
+
+" ------------------------------------------------------------------
+" better display of c++ codes
+Plugin 'octol/vim-cpp-enhanced-highlight'
+"

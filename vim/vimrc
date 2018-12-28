@@ -215,5 +215,5 @@
    :augroup END
    " ------------------------------------------------------------------
    " set path find/e command to include all the files and subdirectories
-   set path+=$PWD/**,
+   set path+=$PWD/**,$WORKSPACE_ROOT/targets/include/,
 
