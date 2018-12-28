@@ -1,5 +1,5 @@
-# exvim files
-exvim/
+
+vim/vimfiles/
 
 # temp files
 *.swp
