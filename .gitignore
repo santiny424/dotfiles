@@ -1,5 +1,6 @@
 
 vim/vimfiles/
+.gutentagsfile
 
 # temp files
 *.swp
