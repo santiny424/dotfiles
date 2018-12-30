@@ -11,6 +11,9 @@ source $VIMRUNTIME/ftplugin/man.vim
 " lst Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+"/////////////////////////////////////////////////////////////////////////////
+" Visual
+"/////////////////////////////////////////////////////////////////////////////
 " ---------------------------------------------------
 " vim-color-solarized
 Plugin 'altercation/vim-colors-solarized'
@@ -40,6 +43,47 @@ let g:airline#extensions#gutentags#enabled = 1
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline_theme='luna'
 
+"/////////////////////////////////////////////////////////////////////////////
+" Navigation
+"/////////////////////////////////////////////////////////////////////////////
+" ---------------------------------------------------
+" nerdtree: invoke by F2
+Plugin 'scrooloose/nerdtree'
+
+let g:NERDTreeWinSize = 40
+let g:NERDTreeMouseMode = 1
+let g:NERDTreeMapToggleZoom = '<Space>'
+nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <F3> :NERDTreeFind<CR>
+
+" ------------------------------------------------------------------
+" same shortcuts for vim and tmux splits
+Plugin 'christoomey/vim-tmux-navigator'
+" Switch between splits
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" ------------------------------------------------------------------
+" switch between .c* and .h* files
+Plugin 'santiny424/CurtineIncSw.vim'
+nnoremap <C-s> :call CurtineIncSw()<CR>
+
+" ------------------------------------------------------------------
+"  enable buffer kill without closing window
+Plugin 'qpkorr/vim-bufkill'
+" delete the buffer
+nnoremap <leader>bd :BD<CR>
+nnoremap <leader>bun :BUN<CR>
+
+" ------------------------------------------------------------------
+" better display of c++ codes
+Plugin 'octol/vim-cpp-enhanced-highlight'
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+
 " ---------------------------------------------------
 " ctrlp: invoke by <ctrl-p>
 Plugin 'kien/ctrlp.vim'
@@ -49,7 +93,19 @@ let g:ctrlp_follow_symlinks = 2
 let g:ctrlp_max_files = 0 " Unset cap of 10,000 files so we find everything
 
 " ---------------------------------------------------
-" vim-fugitive: invoke most by :Gstatus
+" vim-easymotion: invoke by <leader><leader> w,b,e,ge,f,F,h,i,j,k,/
+Plugin 'Lokaltog/vim-easymotion'
+
+map <leader><leader>/ <Plug>(easymotion-sn)
+omap <leader><leader>/ <Plug>(easymotion-tn)
+map <leader><leader>j <Plug>(easymotion-j)
+map <leader><leader>k <Plug>(easymotion-k)
+map <leader><leader>l <Plug>(easymotion-lineforward)
+map <leader><leader>h <Plug>(easymotion-linebackward)
+let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+
+" ---------------------------------------------------
+" vim-fugitive: invoke most by <leader>gs
 Plugin 'tpope/vim-fugitive'
 
 nnoremap <leader>gs :Gstatus<CR>
@@ -58,15 +114,43 @@ nnoremap <leader>ge :Gedit<CR>
 nnoremap <leader>gr :Gread<CR>
 nnoremap <leader>gw :Gwrite<CR><CR>
 
-" ---------------------------------------------------
-" nerdtree: invoke by :NERDTreeToggle
-Plugin 'scrooloose/nerdtree'
+" ------------------------------------------------------------------
+" execute commands in tmux from vim directly
+Plugin 'benmills/vimux'
+" Prompt for a command to run
+nnoremap <Leader>r :VimuxPromptCommand<CR>
+" Run last command executed by VimuxRunCommand
+nnoremap <Leader>rr :VimuxRunLastCommand<CR>
+" Inspect runner panel
+"nnoremap <Leader>ir :VimuxInspectRunner<CR>
+" Close the runner
+"nnoremap <Leader>kr :VimuxCloseRunner<CR>
 
-let g:NERDTreeWinSize = 40
-let g:NERDTreeMouseMode = 1
-let g:NERDTreeMapToggleZoom = '<Space>'
-nnoremap <F2> :NERDTreeToggle<CR>
-nnoremap <F3> :NERDTreeFind<CR>
+"/////////////////////////////////////////////////////////////////////////////
+" Editing
+"/////////////////////////////////////////////////////////////////////////////
+
+" ---------------------------------------------------
+" LargeFile
+Plugin 'vim-scripts/LargeFile'
+let g:LargeFile= 5 " files >= 5MB will use LargeFile rules
+
+" ---------------------------------------------------
+Plugin 'ntpeters/vim-better-whitespace'
+nnoremap <unique> <leader>w :StripWhitespace<CR>
+let g:strip_whitespace_on_save=1
+
+" ---------------------------------------------------
+" vim-surround: invoke when you select words
+" and press 's' followed by the separator
+Plugin 'tpope/vim-surround'
+xmap s <Plug>VSurround
+
+" ---------------------------------------------------
+"  doxygen comments support
+"  try :Dox command when cursor is at the function def
+Plugin 'vim-scripts/DoxygenToolkit.vim'
+let g:DoxygenToolkit_commentType = "C++"
 
 " ---------------------------------------------------
 " nerdcommenter: invoke by <leader>c<space>, <leader>cl, <leader>cu, <F11> or <C-F11>
@@ -75,20 +159,53 @@ Plugin 'scrooloose/nerdcommenter'
 let g:NERDSpaceDelims = 1
 let g:NERDRemoveExtraSpaces = 1
 let g:NERDCustomDelimiters = {
-            \ 'vimentry': { 'left': '--' },
-            \ }
+         \ 'vimentry': { 'left': '--' },
+         \ }
 map <unique> <F11> <Plug>NERDCommenterAlignBoth
 map <unique> <C-F11> <Plug>NERDCommenterUncomment
 
-"/////////////////////////////////////////////////////////////////////////////
-" Editing
-"/////////////////////////////////////////////////////////////////////////////
+" ---------------------------------------------------
+" abular: invoke by <leader>= alignment-character
+" http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
+Plugin 'godlygeek/tabular'
+
+nnoremap <silent> <leader>= :call g:Tabular(1)<CR>
+xnoremap <silent> <leader>= :call g:Tabular(0)<CR>
+function! g:Tabular(ignore_range) range
+   let c = getchar()
+   let c = nr2char(c)
+   if a:ignore_range == 0
+      exec printf('%d,%dTabularize /%s', a:firstline, a:lastline, c)
+   else
+      exec printf('Tabularize /%s', c)
+   endif
+endfunction
 
 " ---------------------------------------------------
-" vim-surround: invoke when you select words
-" and press 's' followed by the separator
-Plugin 'tpope/vim-surround'
-xmap s <Plug>VSurround
+" DISABLE: undotree: invoke by <Leader>u
+"Plugin 'mbbill/undotree'
+"
+"nnoremap <leader>u :UndotreeToggle<CR>
+"let g:undotree_SetFocusWhenToggle=1
+"let g:undotree_WindowLayout = 4
+"
+"" NOTE: this will prevent undotree closed then jump to minibufexpl
+"function! g:CloseUndotree()
+"    call UndotreeHide()
+"    call ex#window#goto_edit_window()
+"endfunction
+"
+"function g:Undotree_CustomMap()
+"    if has('gui_running')
+"        nnoremap <silent> <script> <buffer> <ESC> :call g:CloseUndotree()<CR>
+"    else
+"        nnoremap <silent> <script> <buffer> <leader><ESC> :call g:CloseUndotree()<CR>
+"    endif
+"endfunction
+
+"/////////////////////////////////////////////////////////////////////////////
+" Code complete
+"/////////////////////////////////////////////////////////////////////////////
 
 " ------------------------------------------------------------------
 " set path find/e command to include all the files and subdirectories
@@ -160,7 +277,10 @@ let g:gutentags_generate_on_empty_buffer = 1
 " DISABLE: not working. require latest vim with python supported, latest gcc and libclang
 "Plugin 'valloric/youcompleteme'
 
-" TODO: choose a snippet plugin
+
+"/////////////////////////////////////////////////////////////////////////////
+"" TODO: choose a snippet plugin
+"/////////////////////////////////////////////////////////////////////////////
 " " ---------------------------------------------------
 " Plugin 'Shougo/neosnippet.vim'
 
@@ -169,105 +289,4 @@ let g:gutentags_generate_on_empty_buffer = 1
 
 " " ---------------------------------------------------
 " Plugin 'spf13/snipmate-snippets'
-
-" ---------------------------------------------------
-" DISABLE: undotree: invoke by <Leader>u
-"Plugin 'mbbill/undotree'
-"
-"nnoremap <leader>u :UndotreeToggle<CR>
-"let g:undotree_SetFocusWhenToggle=1
-"let g:undotree_WindowLayout = 4
-"
-"" NOTE: this will prevent undotree closed then jump to minibufexpl
-"function! g:CloseUndotree()
-"    call UndotreeHide()
-"    call ex#window#goto_edit_window()
-"endfunction
-"
-"function g:Undotree_CustomMap()
-"    if has('gui_running')
-"        nnoremap <silent> <script> <buffer> <ESC> :call g:CloseUndotree()<CR>
-"    else
-"        nnoremap <silent> <script> <buffer> <leader><ESC> :call g:CloseUndotree()<CR>
-"    endif
-"endfunction
-
-" ---------------------------------------------------
-" abular: invoke by <leader>= alignment-character
-" http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
- Plugin 'godlygeek/tabular'
-
-nnoremap <silent> <leader>= :call g:Tabular(1)<CR>
-xnoremap <silent> <leader>= :call g:Tabular(0)<CR>
-function! g:Tabular(ignore_range) range
-    let c = getchar()
-    let c = nr2char(c)
-    if a:ignore_range == 0
-        exec printf('%d,%dTabularize /%s', a:firstline, a:lastline, c)
-    else
-        exec printf('Tabularize /%s', c)
-    endif
-endfunction
-
-" ---------------------------------------------------
-" vim-easymotion: invoke by <leader><leader> w,b,e,ge,f,F,h,i,j,k,/
-Plugin 'Lokaltog/vim-easymotion'
-
-map <leader><leader>/ <Plug>(easymotion-sn)
-omap <leader><leader>/ <Plug>(easymotion-tn)
-map <leader><leader>j <Plug>(easymotion-j)
-map <leader><leader>k <Plug>(easymotion-k)
-map <leader><leader>l <Plug>(easymotion-lineforward)
-map <leader><leader>h <Plug>(easymotion-linebackward)
-let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
-
-" ---------------------------------------------------
-" LargeFile
-Plugin 'vim-scripts/LargeFile'
-let g:LargeFile= 5 " files >= 5MB will use LargeFile rules
-
-" ---------------------------------------------------
-Plugin 'ntpeters/vim-better-whitespace'
-nnoremap <unique> <leader>w :StripWhitespace<CR>
-let g:strip_whitespace_on_save=1
-
-" ------------------------------------------------------------------
-" same shortcuts for vim and tmux splits
-Plugin 'christoomey/vim-tmux-navigator'
-" Switch between splits
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-
-" ------------------------------------------------------------------
-" execute commands in tmux from vim directly
-Plugin 'benmills/vimux'
-" Prompt for a command to run
-nnoremap <Leader>r :VimuxPromptCommand<CR>
-" Run last command executed by VimuxRunCommand
-nnoremap <Leader>rr :VimuxRunLastCommand<CR>
-" Inspect runner panel
-"nnoremap <Leader>ir :VimuxInspectRunner<CR>
-" Close the runner
-"nnoremap <Leader>kr :VimuxCloseRunner<CR>
-
-" ------------------------------------------------------------------
-" switch between .c* and .h* files
-Plugin 'santiny424/CurtineIncSw.vim'
-nnoremap <C-s> :call CurtineIncSw()<CR>
-
-" ------------------------------------------------------------------
-"  enable buffer kill without closing window
-Plugin 'qpkorr/vim-bufkill'
-" delete the buffer
-nnoremap <leader>bd :BD<CR>
-nnoremap <leader>bun :BUN<CR>
-
-" ------------------------------------------------------------------
-" better display of c++ codes
-Plugin 'octol/vim-cpp-enhanced-highlight'
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_class_decl_highlight = 1
 
