@@ -48,6 +48,7 @@ configurations for vim + tmux on bash
     :only : max current chosen window (delete all others! do this in NERDTree)
     :bufdo bd : close all buffers except this one
     :%s/foo/bar/g : replace foo with bar in the whole file
+     <C-o> two times: go to the last cursor position even after vim restart
 
 ### shell command
     <leader>r : run command
