@@ -151,9 +151,10 @@ xmap s <Plug>VSurround
 "  try :Dox command when cursor is at the function def
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 let g:DoxygenToolkit_commentType = "C++"
+nnoremap <unique> <leader>d :Dox<CR>
 
 " ---------------------------------------------------
-" nerdcommenter: invoke by <leader>c<space>, <leader>cl, <leader>cu, <F11> or <C-F11>
+" nerdcommenter: invoke by <leader>c<space>, <leader>cl
 Plugin 'scrooloose/nerdcommenter'
 
 let g:NERDSpaceDelims = 1
