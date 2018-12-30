@@ -56,11 +56,12 @@ configurations for vim + tmux on bash
 
 ### git support
     <leader>gs :Gstatus show git status (- to add/reset file, C to trigger commit, <CR> to open file)
-    <leader>gd: git diff on the file
+    <leader>gd: git diff on the file using vimdiff
 
-### commenter TODO: doxygen support
-    <leader>cc: add comments to the lines
-    <leader>c<space>: remove comments
+### commenter
+    <leader>cc: (keep) add comments to the lines
+    <leader>c<space>: toggle comments
+    <leader>d : add doxygen comments
 
 ### code snipet TODO
 
