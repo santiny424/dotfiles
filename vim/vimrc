@@ -215,5 +215,5 @@
    :augroup END
    " ------------------------------------------------------------------
    " set path find/e command to include all the files and subdirectories
-   set path+=$PWD/**,$WORKSPACE_ROOT/targets/include/,
+   set path+=$PWD/**,$WORKSPACE_ROOT/targets/include/,$HOME/.caddir/RHEL6/.caddata/gcc/gcc/include/c++/4.4.2/,/sdev/opt/boost/1.65.1a,/sdev/opt/gtest/1.7.0.a,/sdev/opt/gmock/1.7.0.a
 
