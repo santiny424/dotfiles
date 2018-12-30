@@ -59,13 +59,6 @@ nnoremap <leader>gr :Gread<CR>
 nnoremap <leader>gw :Gwrite<CR><CR>
 
 " ---------------------------------------------------
-" vim-surround: invoke when you select words
-" and press 's' followed by the separator
-Plugin 'tpope/vim-surround'
-
-xmap s <Plug>VSurround
-
-" ---------------------------------------------------
 " nerdtree: invoke by :NERDTreeToggle
 Plugin 'scrooloose/nerdtree'
 
@@ -87,46 +80,79 @@ let g:NERDCustomDelimiters = {
 map <unique> <F11> <Plug>NERDCommenterAlignBoth
 map <unique> <C-F11> <Plug>NERDCommenterUncomment
 
-" ---------------------------------------------------
-" syntastic: invoke when you save file and have syntac-checker
-Plugin 'scrooloose/syntastic'
+"/////////////////////////////////////////////////////////////////////////////
+" Editing
+"/////////////////////////////////////////////////////////////////////////////
 
 " ---------------------------------------------------
+" vim-surround: invoke when you select words
+" and press 's' followed by the separator
+Plugin 'tpope/vim-surround'
+
+xmap s <Plug>VSurround
+
+" ---------------------------------------------------
+"  use tab key to trigger completion
+"Plugin 'ervandew/supertab'
+"Complete options (disable preview scratch window)
+"set completeopt="menu,menuone,longest"
+" Limit popup menu height
+"set pumheight=15
+" SuperTab option for context aware completion
+"let g:SuperTabDefaultCompletionType = "context"
+
+" ------------------------------------------------------------------
+"  auto complete for keywords, variable names, path, etc
 Plugin 'exvim/ex-autocomplpop'
 
-" " ---------------------------------------------------
-" DISABLE: use ex-autocomplpop instead
-" " neocomplcache: invoke when you insert words
-" Plugin 'Shougo/neocomplcache.vim'
+" ------------------------------------------------------------------
+"  auto complete for c/c++ codes, such as after ->, .
+Plugin 'vim-scripts/OmniCppComplete'
+set nocp
+filetype plugin on
+" Note: this depends on ctags database, which is managed by vim-gutentags
+" following options must be set to ctags
+"You have to build your database with at least the following options:
+   "--c++-kinds=+p  : Adds prototypes in the database for C/C++ files.
+   "--fields=+iaS   : Adds inheritance (i), access (a) and function
+   "signatures (S) information.
+   "--extra=+q      : Adds context to the tag name. Note: Without this
+   "option, the script cannot get class members.
+   "--languages=c++ : Builds only the tags for C++ files.
 
-" let g:neocomplcache_enable_at_startup = 1
-" let g:neocomplcache_auto_completion_start_length = 2
-" let g:neocomplcache_enable_smart_case = 1
-" let g:neocomplcache_enable_auto_select = 1 " let neocomplcache's completion behavior like AutoComplPop
-" " let g:neocomplcache_disable_auto_complete = 1 " Enable this if you like TAB for complete
-" " inoremap <C-p> <C-x><C-u>
-" " inoremap <expr><TAB>  pumvisible() ? '\<Down>' : '<TAB>'
-" " inoremap <expr><S-TAB>  pumvisible() ? '\<Up>' : ''
+" ------------------------------------------------------------------
+"  ctags management
+Plugin 'ludovicchabant/vim-gutentags'
+" disable default project roots
+let g:gutentags_add_default_project_roots = 0
+" define own project root to only use git
+let g:gutentags_project_root = ['.git']
+" generate tag file when open vim immediately
+let g:gutentags_generate_on_empty_buffer = 1
+" copy .gutctags file to project root to specify ctags options
+" those options are required for OmniCppComplete
+" :help gutentags-.gutctags
 
-" " ---------------------------------------------------
-" DISABLE: use ex-autocomplpop instead
-" " neocomplete: invoke when you insert words
-" Plugin 'Shougo/neocomplete.vim'
+"" ------------------------------------------------------------------
+" DISABLE: not working. requires libclang with latest gcc
+"Plugin 'Rip-Rip/clang_complete'
+"let g:clang_use_library = 1
+"let g:clang_library_path = $HOME . '/.caddir/RHEL6/cadlib/'
+"" disable auto pop after ->, ., ::
+"let g:clang_complete_auto = 1
+"" close preview window
+"let g:clang_close_preview = 1
+"" Show clang errors in the quickfix window
+"let g:clang_complete_copen = 1
+"" compiler options
+"let g:clang_user_options = '-std=c++0x -I${WORKSPACE_ROOT}/targets/include/ -I${HOME}/.caddir/RHEL6/.caddata/gcc/gcc/include/c++/4.4.2/ -I/sdev/opt/boost/1.65.1a/ -I/sdev/opt/gmock/1.7.0.a/ -I/sdev/opt/gtest/1.7.0.a/ || exit 0'
+"let g:clang_debug = 1
+"" default <C-]> key conflicts with default vim shortcuts
+""let g:clang_jumpto_declaration_key =""
 
-" let g:neocomplete#enable_at_startup = 1
-" let g:neocomplete#enable_smart_case = 1
-" let g:neocomplete#enable_auto_select = 1 " let neocomplete's completion behavior like AutoComplPop
-" " Enable omni completion.
-" autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-" autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-" autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-" autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" " ---------------------------------------------------
-" DISABLE: use ex-autocomplpop instead
-" " YouCompleteMe
-" Plugin 'Valloric/YouCompleteMe'
+" ---------------------------------------------------
+" DISABLE: require latest vim with python supported, latest gcc and libclang
+"Plugin 'valloric/youcompleteme'
 
 " TODO: choose a snippet plugin
 " " ---------------------------------------------------
@@ -231,18 +257,6 @@ Plugin 'qpkorr/vim-bufkill'
 " delete the buffer
 nnoremap <leader>bd :BD<CR>
 nnoremap <leader>bun :BUN<CR>
-
-" ------------------------------------------------------------------
-"  ctags management
-Plugin 'ludovicchabant/vim-gutentags'
-" change default tag file name to better manage gutentags
-let g:gutentags_ctags_tagfile = '.gutentagsfile'
-" disable default project roots
-let g:gutentags_add_default_project_roots = 0
-" define own project root to only use git
-let g:gutentags_project_root = ['.git']
-" use .gutctags file to specify project specific settings for ctags options
-" :help gutentags-.gutctags
 
 " ------------------------------------------------------------------
 " better display of c++ codes
