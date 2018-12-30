@@ -91,15 +91,13 @@ Plugin 'tpope/vim-surround'
 
 xmap s <Plug>VSurround
 
-" ---------------------------------------------------
-"  use tab key to trigger completion
-"Plugin 'ervandew/supertab'
-"Complete options (disable preview scratch window)
-"set completeopt="menu,menuone,longest"
-" Limit popup menu height
-"set pumheight=15
-" SuperTab option for context aware completion
-"let g:SuperTabDefaultCompletionType = "context"
+" ------------------------------------------------------------------
+" set path find/e command to include all the files and subdirectories
+set path+=$PWD/**,$WORKSPACE_ROOT/targets/include/,$HOME/.caddir/RHEL6/.caddata/gcc/gcc/include/c++/4.4.2/,/sdev/opt/boost/1.65.1a,/sdev/opt/gtest/1.7.0.a,/sdev/opt/gmock/1.7.0.a
+" a global tag file to include C++ common codes, gtest, gmock codes
+set tags+=$HOME/.vim/globaltags
+" use following command to generate global tags
+"ctags -R -f $HOME/.vim/globaltags $HOME/.caddir/RHEL6/.caddata/gcc/gcc/include/c++/4.4.2/ /sdev/opt/boost/1.65.1a /sdev/opt/gtest/1.7.0.a /sdev/opt/gmock/1.7.0.a
 
 " ------------------------------------------------------------------
 "  auto complete for keywords, variable names, path, etc
@@ -108,8 +106,6 @@ Plugin 'exvim/ex-autocomplpop'
 " ------------------------------------------------------------------
 "  auto complete for c/c++ codes, such as after ->, .
 Plugin 'vim-scripts/OmniCppComplete'
-set nocp
-filetype plugin on
 " Note: this depends on ctags database, which is managed by vim-gutentags
 " following options must be set to ctags
 "You have to build your database with at least the following options:
@@ -129,12 +125,19 @@ let g:gutentags_add_default_project_roots = 0
 let g:gutentags_project_root = ['.git']
 " generate tag file when open vim immediately
 let g:gutentags_generate_on_empty_buffer = 1
+" use cscope instead of default ctags
+let g:gutentags_modules = ['ctags', 'cscope']
 " copy .gutctags file to project root to specify ctags options
 " those options are required for OmniCppComplete
 " :help gutentags-.gutctags
 
+" ------------------------------------------------------------------
+"  enable vim shortcuts for cscope
+"  try <C-]>, <C-\s> and <C-[spacebar]s>
+Plugin 'chazy/cscope_maps'
+
 "" ------------------------------------------------------------------
-" DISABLE: not working. requires libclang with latest gcc
+" DISABLE: not working. require libclang with latest gcc
 "Plugin 'Rip-Rip/clang_complete'
 "let g:clang_use_library = 1
 "let g:clang_library_path = $HOME . '/.caddir/RHEL6/cadlib/'
@@ -151,7 +154,7 @@ let g:gutentags_generate_on_empty_buffer = 1
 ""let g:clang_jumpto_declaration_key =""
 
 " ---------------------------------------------------
-" DISABLE: require latest vim with python supported, latest gcc and libclang
+" DISABLE: not working. require latest vim with python supported, latest gcc and libclang
 "Plugin 'valloric/youcompleteme'
 
 " TODO: choose a snippet plugin
