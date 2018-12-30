@@ -88,7 +88,6 @@ map <unique> <C-F11> <Plug>NERDCommenterUncomment
 " vim-surround: invoke when you select words
 " and press 's' followed by the separator
 Plugin 'tpope/vim-surround'
-
 xmap s <Plug>VSurround
 
 " ------------------------------------------------------------------
@@ -104,10 +103,10 @@ set tags+=$HOME/.vim/globaltags
 Plugin 'exvim/ex-autocomplpop'
 
 " ------------------------------------------------------------------
-"  auto complete for c/c++ codes, such as after ->, .
+"  auto complete for c/c++ codes, such as after ->, . based on ctags
 Plugin 'vim-scripts/OmniCppComplete'
 " Note: this depends on ctags database, which is managed by vim-gutentags
-" following options must be set to ctags
+" following options must be set to ctags (see .ctags file)
 "You have to build your database with at least the following options:
    "--c++-kinds=+p  : Adds prototypes in the database for C/C++ files.
    "--fields=+iaS   : Adds inheritance (i), access (a) and function
@@ -127,9 +126,7 @@ let g:gutentags_project_root = ['.git']
 let g:gutentags_generate_on_empty_buffer = 1
 " extend cscope
 "let g:gutentags_modules = ['ctags', 'cscope']
-" copy .gutctags file to project root to specify ctags options
-" those options are required for OmniCppComplete
-" :help gutentags-.gutctags
+" .ctags option file shall be copied to ~/.ctags
 
 " ------------------------------------------------------------------
 "  enable vim shortcuts for cscope
@@ -137,21 +134,27 @@ let g:gutentags_generate_on_empty_buffer = 1
 "Plugin 'chazy/cscope_maps'
 
 "" ------------------------------------------------------------------
-" DISABLE: not working. require libclang with latest gcc
+"" DISABLE: not working. clang gives wrong output
 "Plugin 'Rip-Rip/clang_complete'
-"let g:clang_use_library = 1
+"" auto select first entry without insert
+"let g:clang_auto_select = 1
+"" use libclang
+""let g:clang_use_library = 1
 "let g:clang_library_path = $HOME . '/.caddir/RHEL6/cadlib/'
-"" disable auto pop after ->, ., ::
+"" auto pop after ->, ., ::
 "let g:clang_complete_auto = 1
 "" close preview window
 "let g:clang_close_preview = 1
 "" Show clang errors in the quickfix window
 "let g:clang_complete_copen = 1
 "" compiler options
-"let g:clang_user_options = '-std=c++0x -I${WORKSPACE_ROOT}/targets/include/ -I${HOME}/.caddir/RHEL6/.caddata/gcc/gcc/include/c++/4.4.2/ -I/sdev/opt/boost/1.65.1a/ -I/sdev/opt/gmock/1.7.0.a/ -I/sdev/opt/gtest/1.7.0.a/ || exit 0'
+"let g:clang_user_options = '-std=c++11 -I../include/ -I${WORKSPACE_ROOT}/targets/include/ -I${HOME}/.caddir/RHEL6/.caddata/gcc/gcc/include/c++/4.4.2/ -I/sdev/opt/boost/1.65.1a/ -I/sdev/opt/gmock/1.7.0.a/ -I/sdev/opt/gtest/1.7.0.a/'
 "let g:clang_debug = 1
 "" default <C-]> key conflicts with default vim shortcuts
 ""let g:clang_jumpto_declaration_key =""
+"" disable clang snippets first
+"let g:clang_snippets = 0
+"let g:clang_snippets_engine = "clang_complete"
 
 " ---------------------------------------------------
 " DISABLE: not working. require latest vim with python supported, latest gcc and libclang

@@ -1,3 +1,6 @@
--I $PWD/external/include
--I $PWD/internal/include
--I ${WORKSPACE_ROOT}/targets/include
+-I../include/
+-I${WORKSPACE_ROOT}/targets/include/
+-I${HOME}/.caddir/RHEL6/.caddata/gcc/gcc/include/c++/4.4.2/
+-I/sdev/opt/boost/1.65.1a/
+-I/sdev/opt/gmock/1.7.0.a/
+-I/sdev/opt/gtest/1.7.0.a/
