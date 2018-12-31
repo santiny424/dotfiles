@@ -171,6 +171,12 @@
    " enhance '<' '>' , do not need to reselect the block after shift it.
    vnoremap < <gv
    vnoremap > >gv
+   " ------------------------------------------------------------------
+   "  auto pair brackets while typing
+   "  for existing written text, use plugin surround
+   inoremap <leader>( (<CR>)<C-c>O
+   inoremap <leader>{ {<CR>}<C-c>O
+   inoremap <leader>[ [<CR>]<C-c>O
 
 "/////////////////////////////////////////////////////////////////////////////
 " |Navigations|
