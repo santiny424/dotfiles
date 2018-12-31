@@ -18,7 +18,8 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'santiny424/CurtineIncSw.vim'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'kien/ctrlp.vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-fugitive'
 Plugin 'benmills/vimux'
@@ -31,5 +32,6 @@ Plugin 'godlygeek/tabular'
 Plugin 'exvim/ex-autocomplpop'
 Plugin 'vim-scripts/OmniCppComplete'
 Plugin 'ludovicchabant/vim-gutentags'
+
 
 filetype plugin indent on " required
