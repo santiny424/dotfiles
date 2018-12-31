@@ -1,4 +1,5 @@
 #!/bin/bash
+source ../utilities.sh
 
 current_path=$(pwd)
 echo ------------------------------------------
@@ -32,17 +33,11 @@ if ! test "$ret" -eq 0; then
     exit 1
 fi
 
-timestamp=$( date +%Y%m%d_%H%M%S )
 echo ------------------------------------------
-echo "// Installing vimrc files "
-if [ -f $HOME/.vimrc ]; then
-   # check whether vimrc file is identical
-   is_identical=$(diff ".vimrc" "$HOME/.vimrc")
-   # if .vimrc file is identical then skip installation
-   if [ "$is_identical" != "" ]; then
-      echo "Found existing .vimrc. Moved to .vimrc_${timestamp}"
-      cp -f $HOME/.vimrc $HOME/.vimrc_${timestamp}
-   fi
-fi
-cp -f .vimrc $HOME/.vimrc
+echo "// Installing ctags configuration file... "
+install_file ctags $HOME/.ctags
+
+echo ------------------------------------------
+echo "// Installing vimrc files... "
+install_file .vimrc $HOME/.vimrc
 
