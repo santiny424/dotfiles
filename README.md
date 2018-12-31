@@ -85,14 +85,8 @@ tmux can be installed via cadenv
 
 # References
 ## Tmux
-- shortcuts
     https://robots.thoughtbot.com/a-tmux-crash-course
 ## exvim
     https://exvim.github.io/
 ## use vim as IDE
     https://github.com/yangyangwithgnu/use_vim_as_ide
-## vim
-- highlight: http://vim.wikia.com/wiki/Highlight_current_line
-- line number: https://jeffkreeftmeijer.com/vim-number/#relative-line-numbers
-## SVN
-- svn command shortcuts are in bashrc
