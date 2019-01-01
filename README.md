@@ -15,45 +15,43 @@ cd ~/dotfiles
 ```
 
 # CheatSheet
-
 ## vim
 ### General
-   <leader> key is set to ";"
-   <C-hjkl> : move around
-   kj : exit insert mode
-   <leader>P : in command line mode, paste the yarked text
-   s followed by separator : in visual mode, surround the selected text with separator
+    <leader> key is set to ";"
+    <C-hjkl> : move around
+    kj : exit insert mode
+    <leader>P : in command line mode, paste the yarked text
+    s followed by separator : in visual mode, surround the selected text with separator
 
 ### run shell command
-   <leader>r : run command
-   <leader>rr : rerun last command
+    <leader>r : run command
+    <leader>rr : rerun last command
 
 ### git support
-   <leader>gs :Gstatus show git status (- to add/reset file, C to trigger commit, <CR> to open file)
-   <leader>gd: git diff on the file using vimdiff
+    <leader>gs :Gstatus show git status (- to add/reset file, C to trigger commit, <CR> to open file)
+    <leader>gd: git diff on the file using vimdiff
 
 ### commenter
-   <leader>cc: (keep) add comments to the lines
-   <leader>c<space>: toggle comments
-   <leader>d : add doxygen comments
+    <leader>cc: (keep) add comments to the lines
+    <leader>c<space>: toggle comments
+    <leader>d : add doxygen comments
 
 ### file browser
-   <F2> : open/close NERDTree
-   <F3> : find the current file in the tree
-   R : refresh the whole tree
-   m : open up menu
+    <F2> : open/close NERDTree
+    <F3> : find the current file in the tree
+    R : refresh the whole tree
+    m : open up menu
 
 ### vimdiff
-   ]c : next difference
-   [c : previous difference
-   do : diff obtain from the other file
-   dp : diff put to the other file
-   zo : open folded text
-   zc : close folded text
-   :diffupdate : reload files
+    ]c : next difference
+    [c : previous difference
+    do : diff obtain from the other file
+    dp : diff put to the other file
+    zo : open folded text
+    zc : close folded text
+    :diffupdate : reload files
 
 ### code snipet TODO
-
 
 ## tmux
 ### General
@@ -92,9 +90,9 @@ cd ~/dotfiles
     prefix + ] : paste the text in the terminal
 
 # References
-## Tmux
-    https://robots.thoughtbot.com/a-tmux-crash-course
-## exvim
-    https://exvim.github.io/
-## use vim as IDE
-    https://github.com/yangyangwithgnu/use_vim_as_ide
+- Tmux
+  https://robots.thoughtbot.com/a-tmux-crash-course
+- exvim
+  https://exvim.github.io/
+- use vim as IDE
+  https://github.com/yangyangwithgnu/use_vim_as_ide
