@@ -1,12 +1,65 @@
 # Intro
 configurations for vim + tmux on bash
 
-# How to use
+# How to set it up
+## Requires
+- vim
+- tmux
+- ctags
+
+## Install
+```
+git clone https://github.com/santiny424/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+./install.sh
+```
+
+# CheatSheet
+
+## vim
+### General
+   <leader> key is set to ";"
+   <C-hjkl> : move around
+   kj : exit insert mode
+   <leader>P : in command line mode, paste the yarked text
+   s followed by separator : in visual mode, surround the selected text with separator
+
+### run shell command
+   <leader>r : run command
+   <leader>rr : rerun last command
+
+### git support
+   <leader>gs :Gstatus show git status (- to add/reset file, C to trigger commit, <CR> to open file)
+   <leader>gd: git diff on the file using vimdiff
+
+### commenter
+   <leader>cc: (keep) add comments to the lines
+   <leader>c<space>: toggle comments
+   <leader>d : add doxygen comments
+
+### file browser
+   <F2> : open/close NERDTree
+   <F3> : find the current file in the tree
+   R : refresh the whole tree
+   m : open up menu
+
+### vimdiff
+   ]c : next difference
+   [c : previous difference
+   do : diff obtain from the other file
+   dp : diff put to the other file
+   zo : open folded text
+   zc : close folded text
+   :diffupdate : reload files
+
+### code snipet TODO
+
+
 ## tmux
 ### General
     prefix is set to <C-a>
-    prefix + ?
-       list all available commands
+    prefix + ? : list all available commands
+
 ### Session
     tmux new -s session_name (prefix :new)
         creates a new tmux session named session_name
@@ -18,70 +71,25 @@ configurations for vim + tmux on bash
         lists existing tmux sessions
     tmux detach (prefix + d)
         detach the currently attached session
+
 ### Windows(prefix +)
     c : create
     k : kill window
     , : rename window
     number : go to <num> window
+
 ### Panes(prefix +)
     | : vertical split
     - : horizontal split
     x : kill
     z : zoom in/out
     Ctrl + <arrow> (keep pressing Ctrl): resize the current pane
+
 ### Copy mode
-    prefix + [ : enter copy mode
-    space: start to make a selection
-    enter: copy to default tmux buffers and exit copy mode
+    prefix + [ : enter copy mode (navigate using vim keys)
+    v: start to make a selection
+    y: yank to default tmux buffers and exit copy mode
     prefix + ] : paste the text in the terminal
-
-## vim
-### General
-    zz : move current line to the middle
-    zt : move current line to the top
-    zb : move current line to the bottom
-    kj : exit insert mode
-    <C-y> : move screen up one line
-    <C-e> : move screen down one line
-    u : undo last change
-    :<C-r>" : paste the yarked text in the command mode
-    :only : max current chosen window (delete all others! do this in NERDTree)
-    :bufdo bd : close all buffers except this one
-    :%s/foo/bar/g : replace foo with bar in the whole file
-     <C-o> two times: go to the last cursor position even after vim restart
-
-### shell command
-    <leader>r : run command
-    <leader>rr : rerun last command
-
-### git support
-    <leader>gs :Gstatus show git status (- to add/reset file, C to trigger commit, <CR> to open file)
-    <leader>gd: git diff on the file using vimdiff
-
-### commenter
-    <leader>cc: (keep) add comments to the lines
-    <leader>c<space>: toggle comments
-    <leader>d : add doxygen comments
-
-### code snipet TODO
-
-### netrw
-    <F2> : open/close NERDTree
-    <F3> : find the current file in the tree
-    R: refresh the whole tree
-
-### vimdiff
-    ]c : next difference
-    [c : previous difference
-    do : diff obtain from the other file
-    dp : diff put to the other file
-    zo : open folded text
-    zc : close folded text
-    :diffupdate : reload files
-
-# How to set it up
-tmux can be installed via cadenv
-
 
 # References
 ## Tmux

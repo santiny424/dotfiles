@@ -137,7 +137,9 @@
    set lazyredraw " do not redraw while executing macros (much faster)
    set autoread   " reload file when changed outside of vim
    " Escape insert mode easier
-   :imap kj <Esc>
+   inoremap kj <Esc>
+   " paste yarked text in command line mode
+   cnoremap <leader>P <C-r>"
    " ------------------------------------------------------------------
    " turn off swap files
    set noswapfile
@@ -149,9 +151,6 @@
    set cindent shiftwidth=3 " set cindent on to autoinent
    set tabstop=3            " set tabstop
    set expandtab
-   " Auto indent pasted text
-   nnoremap p p=`]<C-o>
-   nnoremap P P=`]<C-o>
    " ------------------------------------------------------------------
    " persistent undo
    " Keep undo history across sessions, by storing in file.
