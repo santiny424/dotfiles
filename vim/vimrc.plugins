@@ -1,11 +1,8 @@
-" Pathogen or Vundle (deafult is Vundle) {{{
+set nocompatible " be iMproved, required
+filetype off " required
 
-" Comment-out if you want to use pahogen
-" execute pathogen#infect()
-" com! -nargs=+ Bundle
-
-" man.vim: invoked by :Man {name}
-source $VIMRUNTIME/ftplugin/man.vim
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " ---------------------------------------------------
 " lst Vundle manage Vundle, required
@@ -290,4 +287,7 @@ let g:gutentags_generate_on_empty_buffer = 1
 
 " " ---------------------------------------------------
 " Plugin 'spf13/snipmate-snippets'
+
+call vundle#end()
+filetype plugin indent on " required
 

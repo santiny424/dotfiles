@@ -75,31 +75,18 @@
 "/////////////////////////////////////////////////////////////////////////////
 " |Plugins| installation (Use Vundle)
 "/////////////////////////////////////////////////////////////////////////////
-   " vundle#begin
-   filetype off " required
-   " set the runtime path to include Vundle
-   if exists('g:vim_custom_path')
-       let g:vim_tools_path = g:vim_custom_path.'/vimfiles/tools/'
-       exec 'set rtp+=' . fnameescape ( g:vim_custom_path.'/vimfiles/bundle/Vundle.vim/' )
-       call vundle#rc(g:vim_custom_path.'/vimfiles/bundle/')
-   else
-       echoerr "Not correctly installed!"
-   endif
-   " load .vimrc.plugins & .vimrc.plugins.local
+   " load default plugins config
    if exists('g:vim_custom_path')
        let vimrc_plugins_path = g:vim_custom_path.'/vimrc.plugins'
-       let vimrc_plugins_local_path = g:vim_custom_path.'/vimrc.plugins.local'
+       exec 'source ' . fnameescape(vimrc_plugins_path)
    else
        echoerr "Not correctly installed!"
    endif
-   if filereadable(expand(vimrc_plugins_path))
-       exec 'source ' . fnameescape(vimrc_plugins_path)
-   endif
+   " load local plugins if exists
+   let vimrc_plugins_local_path = '~/.vimrc.plugins.local'
    if filereadable(expand(vimrc_plugins_local_path))
        exec 'source ' . fnameescape(vimrc_plugins_local_path)
    endif
-   " vundle#end
-   filetype plugin indent on " required
 "/////////////////////////////////////////////////////////////////////////////
 " |Visual|
 "/////////////////////////////////////////////////////////////////////////////

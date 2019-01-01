@@ -4,18 +4,13 @@ source ../utilities.sh
 current_path=$(pwd)
 echo ------------------------------------------
 echo "// Installing Vundle..."
-if [ ! -d "./vimfiles/" ]; then
-    mkdir ./vimfiles/
+if [ ! -d "~/.vim/bundle/" ]; then
+    mkdir -p ~/.vim/bundle/
 fi
-cd ./vimfiles/
-
-if [ ! -d "./bundle/" ]; then
-    mkdir ./bundle/
-fi
-cd ./bundle/
+cd ~/.vim/bundle/
 
 if [ ! -d "./Vundle.vim/" ]; then
-    git clone https://github.com/gmarik/Vundle.vim Vundle.vim
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 ret=$?
 if ! test "$ret" -eq 0; then
@@ -26,7 +21,7 @@ fi
 echo ------------------------------------------
 echo "// Installing vim-plugins..."
 cd ${current_path}
-vim -u vimrc.plugins.minimal --cmd "set rtp=./vimfiles,\$VIMRUNTIME,./vimfiles/after" +PluginInstall +qall
+vim -u vimrc.plugins +PluginInstall +qall
 ret=$?
 if ! test "$ret" -eq 0; then
     echo >&2 "// Failed to install vim plugins"

@@ -1,6 +1,4 @@
 
-vim/vimfiles/
-
 # temp files
 *.swp
 *.pyc
