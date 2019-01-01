@@ -147,10 +147,14 @@
    set nowb
    " ------------------------------------------------------------------
    " indent
-   set autoindent           " automatically indent in a new line
-   set cindent shiftwidth=3 " set cindent on to autoinent
-   set tabstop=3            " set tabstop
+   set autoindent   " automatically indent in a new line
+   set shiftwidth=4 " set shift width in new line as 4 spaces
+   set tabstop=4    " set tab width to 4
    set expandtab
+   " set indent of 3 for python and clang files
+   autocmd FileType python setlocal ts=3 sw=3 expandtab
+   autocmd FileType c setlocal ts=3 sw=3 expandtab
+   autocmd FileType cpp setlocal ts=3 sw=3 expandtab
    " ------------------------------------------------------------------
    " persistent undo
    " Keep undo history across sessions, by storing in file.
