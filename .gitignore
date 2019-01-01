@@ -1,7 +1,5 @@
 
 vim/vimfiles/
-tags
-*cscope*
 
 # temp files
 *.swp
