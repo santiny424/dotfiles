@@ -236,7 +236,7 @@ let g:gutentags_add_default_project_roots = 0
 " define own project root to only use git
 let g:gutentags_project_root = ['.git']
 " create tag file in .git directory
-let g:gutentags_ctags_tagfile = '.git/tags'
+"let g:gutentags_ctags_tagfile = '.gutentagsfile'
 " generate tag file when open vim immediately
 let g:gutentags_generate_on_empty_buffer = 1
 " extend cscope
