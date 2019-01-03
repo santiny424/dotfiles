@@ -107,7 +107,7 @@
    set scrolloff=8   " minimal number of screen lines to keep above and below the cursor
    set sidescrolloff=15
    set sidescroll=1
-   set wrap          " wrap text
+   set nowrap        " do not wrap text
    "set linebreak     " wrap lines at convenient points
    set ruler         " show the cursor position all the time
    set visualbell    " No sounds
