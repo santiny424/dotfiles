@@ -132,7 +132,9 @@ let g:LargeFile= 5 " files >= 5MB will use LargeFile rules
 
 " ---------------------------------------------------
 Plugin 'ntpeters/vim-better-whitespace'
-nnoremap <unique> <leader>w :StripWhitespace<CR>
+" do not hightlight the whitespace
+let g:better_whitespace_enabled=0
+" strip whitespace when file is saved
 let g:strip_whitespace_on_save=1
 
 " ---------------------------------------------------
@@ -145,7 +147,7 @@ xmap s <Plug>VSurround
 "  doxygen comments support
 "  try :Dox command when cursor is at the function def
 Plugin 'vim-scripts/DoxygenToolkit.vim'
-let g:DoxygenToolkit_commentType = "C++"
+"let g:DoxygenToolkit_commentType = "C++"
 nnoremap <unique> <leader>d :Dox<CR>
 
 " ---------------------------------------------------
@@ -214,6 +216,10 @@ set tags+=$HOME/.vim/globaltags
 " ------------------------------------------------------------------
 "  auto complete for keywords, variable names, path, etc
 Plugin 'exvim/ex-autocomplpop'
+
+" ------------------------------------------------------------------
+"  view functions, modules in c++ file
+Plugin 'vim-scripts/taglist.vim'
 
 " ------------------------------------------------------------------
 "  auto complete for c/c++ codes, such as after ->, . based on ctags
