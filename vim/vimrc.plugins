@@ -220,6 +220,9 @@ Plugin 'exvim/ex-autocomplpop'
 " ------------------------------------------------------------------
 "  view functions, modules in c++ file
 Plugin 'vim-scripts/taglist.vim'
+let Tlist_Use_Right_Window   = 1
+let Tlist_WinWidth = 60
+nnoremap <silent> <F4> :TlistToggle<CR>
 
 " ------------------------------------------------------------------
 "  auto complete for c/c++ codes, such as after ->, . based on ctags
