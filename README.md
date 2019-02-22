@@ -61,6 +61,7 @@ cd ~/dotfiles
 ### Session
     tmux new -s session_name (prefix :new)
         creates a new tmux session named session_name
+    prefix + $ : rename current session
     tmux a -t session_name
         attaches to an existing tmux session named session_name
     tmux switch -t session_name (prefix + s)
