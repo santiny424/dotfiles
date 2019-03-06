@@ -1,11 +1,11 @@
 # Intro
-configurations for vim + tmux on bash
+Configurations for vim + tmux on bash for C/C++/python development
+![alt text](screenshots/mobaxterm.PNG)
 
 # How to set it up
 ## Requires
-- vim
+- vim (at least v8.0)
 - tmux
-- ctags
 
 ## Install
 ```
@@ -16,31 +16,36 @@ cd ~/dotfiles
 
 # CheatSheet
 ## vim
-### General
+### General (vim-tmux-navigator)
     <leader> key is set to ";"
     <C-hjkl> : move around
     kj : exit insert mode
     <leader>P : in command line mode, paste the yarked text
+    <leader>bd: close current buffer
+
+### text enditing (autocomplpop, OmniCppComplete, gutentags)
+    auto complete has been enabled by default
     s followed by separator : in visual mode, surround the selected text with separator
 
-### run shell command
+### run shell command (vimux)
     <leader>r : run command
     <leader>rr : rerun last command
 
-### git support
+### git support (vim-fugitive)
     <leader>gs :Gstatus show git status (- to add/reset file, C to trigger commit, <CR> to open file)
     <leader>gd: git diff on the file using vimdiff
 
-### commenter
+### commenter (nerdcommenter, DoxygenToolkit)
     <leader>cc: (keep) add comments to the lines
     <leader>c<space>: toggle comments
     <leader>d : add doxygen comments
 
-### file browser
-    <F2> : open/close NERDTree
-    <F3> : find the current file in the tree
-    R : refresh the whole tree
-    m : open up menu
+### Code navigate (NerdTree, fzf)
+    <leader>f : find anything
+    <F2> : open/close
+    <F3> : find the current buffer in the tree
+    <F4> : tag list
+    <CTRL + s> : toggle between c* and h* files
 
 ### vimdiff
     ]c : next difference
@@ -50,8 +55,6 @@ cd ~/dotfiles
     zo : open folded text
     zc : close folded text
     :diffupdate : reload files
-
-### code snipet TODO
 
 ## tmux
 ### General
@@ -90,10 +93,14 @@ cd ~/dotfiles
     y: yank to default tmux buffers and exit copy mode
     prefix + ] : paste the text in the terminal
 
+# TODO
+- (M)  code snipet
+- (XL) auto complete engine (async)
+- (S)  change Vundle to vim-plug
+
 # References
-- Tmux
-  https://robots.thoughtbot.com/a-tmux-crash-course
-- exvim
-  https://exvim.github.io/
-- use vim as IDE
-  https://github.com/yangyangwithgnu/use_vim_as_ide
+- [ exvim ](https://exvim.github.io/)
+- [How to Do 90% of What Plugins Do](https://www.youtube.com/watch?v=XA2WjJbmmoM)
+- [A tmux crash course](https://robots.thoughtbot.com/a-tmux-crash-course)
+- [ use vim as IDE ](https://github.com/yangyangwithgnu/use_vim_as_ide)
+
