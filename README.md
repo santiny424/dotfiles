@@ -1,11 +1,11 @@
 # Intro
-configurations for vim + tmux on bash
+Configurations for vim + tmux on bash for C/C++/python development
+![alt text](screenshots/mobaxterm.PNG)
 
 # How to set it up
 ## Requires
-- vim
+- vim (at least v8.0)
 - tmux
-- ctags
 
 ## Install
 ```
@@ -51,8 +51,6 @@ cd ~/dotfiles
     zc : close folded text
     :diffupdate : reload files
 
-### code snipet TODO
-
 ## tmux
 ### General
     prefix is set to <C-a>
@@ -89,6 +87,11 @@ cd ~/dotfiles
     v: start to make a selection
     y: yank to default tmux buffers and exit copy mode
     prefix + ] : paste the text in the terminal
+
+# TODO
+## code snipet
+## change Vundle to vim-plug
+## auto complete engine (async)
 
 # References
 - Tmux
