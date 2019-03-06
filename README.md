@@ -18,7 +18,7 @@ cd ~/dotfiles
 ## vim
 ### General (vim-tmux-navigator)
     <leader> key is set to ";"
-    <C-hjkl> : move around
+    <CTRL-hjkl> : move around
     kj : exit insert mode
     <leader>P : in command line mode, paste the yarked text
     <leader>bd: close current buffer
@@ -58,7 +58,7 @@ cd ~/dotfiles
 
 ## tmux
 ### General
-    prefix is set to <C-a>
+    prefix is set to <CTRL-a>
     prefix + ? : list all available commands
 
 ### Session
