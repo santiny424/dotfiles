@@ -94,14 +94,13 @@ cd ~/dotfiles
     prefix + ] : paste the text in the terminal
 
 # TODO
-## (M)  code snipet
-## (XL) auto complete engine (async)
-## (S)  change Vundle to vim-plug
+- (M)  code snipet
+- (XL) auto complete engine (async)
+- (S)  change Vundle to vim-plug
 
 # References
-- Tmux
-  https://robots.thoughtbot.com/a-tmux-crash-course
-- exvim
-  https://exvim.github.io/
-- use vim as IDE
-  https://github.com/yangyangwithgnu/use_vim_as_ide
+- [ exvim ](https://exvim.github.io/)
+- [How to Do 90% of What Plugins Do](https://www.youtube.com/watch?v=XA2WjJbmmoM)
+- [A tmux crash course](https://robots.thoughtbot.com/a-tmux-crash-course)
+- [ use vim as IDE ](https://github.com/yangyangwithgnu/use_vim_as_ide)
+
