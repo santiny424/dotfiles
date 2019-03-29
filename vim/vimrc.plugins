@@ -86,6 +86,7 @@ let g:cpp_class_decl_highlight = 1
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 nnoremap <leader>f :Files<CR>
+nnoremap <leader>F :Files ${WORKSPACE_ROOT}<CR>
 
 " ---------------------------------------------------
 " vim-easymotion: invoke by <leader><leader> w,b,e,ge,f,F,h,i,j,k,/
