@@ -83,6 +83,7 @@ cd ~/dotfiles
 ### Panes(prefix +)
     | : vertical split
     - : horizontal split
+    space : toggle between layouts
     x : kill
     z : zoom in/out
     Ctrl + <arrow> (keep pressing Ctrl): resize the current pane
