@@ -31,7 +31,7 @@
    " always use English menu
    " NOTE: this must before filetype off, otherwise it won't work
    set langmenu=none
-   " use English for anaything in vim-editor.
+   " use English for anything in vim-editor.
    if WINDOWS()
       silent exec 'language english'
    elseif OSX()
@@ -179,6 +179,9 @@
    set ignorecase  " ignore case...
    set smartcase   " ... unless we type in capital
    nnoremap <F8> :noh<CR>
+
+   " use interactive shell, so can run command from bashrc in vim
+   set shellcmdflag=-ic
    " ------------------------------------------------------------------
    "  folding
    set foldmethod=indent   "fold based on indent
