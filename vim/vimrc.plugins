@@ -106,6 +106,7 @@ Plugin 'tpope/vim-fugitive'
 
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gd :Gdiff<CR>
+" Gdiff ~1 can also show the diff with last commits
 nnoremap <leader>ge :Gedit<CR>
 nnoremap <leader>gr :Gread<CR>
 nnoremap <leader>gw :Gwrite<CR><CR>
