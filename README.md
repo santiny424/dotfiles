@@ -56,6 +56,10 @@ cd ~/dotfiles
     zc : close folded text
     :diffupdate : reload files
 
+### vim windows
+   <CTRL + K> : switch to vertical split
+   <CTRL + H> : switch to horizontal split
+
 ## tmux
 ### General
     prefix is set to <CTRL-a>
