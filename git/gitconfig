@@ -1,0 +1,18 @@
+[diff]
+	tool = bcompare
+[alias]
+	unstage = reset HEAD --
+[difftool "bcompare"]
+	cmd = bcompare \"$LOCAL\" \"$REMOTE\"
+[mergetool "bcompare"]
+	cmd = bcompare \"$LOCAL\" \"$REMOTE\" \"$BASE\" -mergeoutput=\"$MERGED\"
+[merge]
+	tool = bcompare
+[difftool]
+	prompt = false
+[credential]
+	helper = cache --timeout=3600
+[push]
+	default = simple
+[mergetool]
+	keepBackup = false

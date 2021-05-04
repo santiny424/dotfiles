@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+
+#####################################
+# General
+#####################################
+# grep efficiently
+alias rgrep='grep -rnIi --color=auto --exclude=*.pyc --exclude=*~ --exclude=*.dd --exclude-dir=.git --exclude-dir=.svn'
+# only grep codes: c/c++ and python codes, exclude target directory
+alias cgrep='find . -type f \( -name "*.c" -or -name "*.cpp" -or -name "*.py" -or -name "*.hpp" -or -name "*.h" -or -name "*.ddf" \) ! -path "./targets/*" -print0 | xargs -0 -P2 grep --color=auto'
+# support fzf
+export FZF_DEFAULT_COMMAND="find -L . -path '*/\.*' -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..// "
+
+#####################################
+# SVN
+#####################################
+DIFFTOOL=bcompare #available in cadenv
+#DIFFTOOL=kdiff3
+export SVN_EDITOR=$DIFFTOOL
+# diff all uncommitted changes
+alias sdif='svn diff --diff-cmd=$DIFFTOOL'
+# diff with head
+alias sdifh='svn diff --diff-cmd=$DIFFTOOL -r HEAD'
+# diff with previous commit
+alias sdifp='svn diff --diff-cmd=$DIFFTOOL -r PREV'
+# diff with the base
+alias sdifb='svn diff --diff-cmd=$DIFFTOOL -r BASE'
+# resolve by accept the working version
+alias sresolve='svn resolve --accept working'
+# add all files starting with ? in svn status
+alias sadd="svn st | grep ^? | sed 's/?    //' | xargs svn add"
+
+#####################################
+# GIT
+#####################################
+# git completion
+source $HOME/dry/git-completion.bash
+
+# add git aliases for unstage
+git config --global alias.unstage 'reset HEAD --'
+# convient commands
+alias gs='git status'
+alias ga='git add'
+alias gaa='git add -A'
+alias gc='git commit'
+alias gca='git commit -a'
+
+# remove *.orig files
+# they are generated during git mergetool
+alias git-remove-merge-orig-files='rm $(find . -name "*.orig")'
+
+# statistics for git repo per author
+# by default (without specifying the name) it checks the active user
+function git_contribution()
+{
+    git log --author="$1" --pretty=tformat: --numstat \
+        | gawk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s removed lines: %s total lines: %s\n", add, subs, loc }' -
+}
+
