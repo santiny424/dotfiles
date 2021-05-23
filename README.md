@@ -99,10 +99,11 @@ cd ~/dotfiles
     prefix + ] : paste the text in the terminal
 
 # TODO
-- (M)  toggle between files is slow in big project. Need check the command
+- (D)  toggle between files is slow in big project. Need check the command
 - (M)  code snipet
 - (XL) auto complete engine (async)
 - (S)  change Vundle to vim-plug
+- (S) switch to oh-my-zsh
 
 # References
 - [ exvim ](https://exvim.github.io/)
