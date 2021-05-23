@@ -206,14 +206,13 @@ endfunction
 "/////////////////////////////////////////////////////////////////////////////
 " Code complete
 "/////////////////////////////////////////////////////////////////////////////
+Plugin 'neoclide/coc.nvim'
 
 " ------------------------------------------------------------------
 " set path find/e command to include all the files and subdirectories
 set path+=$PWD/**,$WORKSPACE_ROOT/targets/include/,$HOME/.caddir/RHEL6/.caddata/gcc/gcc/include/c++/4.4.2/,/sdev/opt/boost/1.65.1a,/sdev/opt/gtest/1.7.0.a,/sdev/opt/gmock/1.7.0.a
 " a global tag file to include C++ common codes, gtest, gmock codes
 set tags+=$HOME/.vim/globaltags
-" use following command to generate global tags
-"ctags -R -f $HOME/.vim/globaltags $HOME/.caddir/RHEL6/.caddata/gcc/gcc/include/c++/4.4.2/ /sdev/opt/boost/1.65.1a /sdev/opt/gtest/1.7.0.a /sdev/opt/gmock/1.7.0.a
 
 " ------------------------------------------------------------------
 "  auto complete for keywords, variable names, path, etc
@@ -221,14 +220,15 @@ Plugin 'exvim/ex-autocomplpop'
 
 " ------------------------------------------------------------------
 "  view functions, modules in c++ file
-Plugin 'vim-scripts/taglist.vim'
-let Tlist_Use_Right_Window   = 1
-let Tlist_WinWidth = 60
-nnoremap <silent> <F4> :TlistToggle<CR>
+"" DISABLE: to try coc.nvim
+" Plugin 'vim-scripts/taglist.vim'
+"let Tlist_Use_Right_Window   = 1
+"let Tlist_WinWidth = 60
+"nnoremap <silent> <F4> :TlistToggle<CR>
 
 " ------------------------------------------------------------------
 "  auto complete for c/c++ codes, such as after ->, . based on ctags
-Plugin 'vim-scripts/OmniCppComplete'
+" Plugin 'vim-scripts/OmniCppComplete'
 " Note: this depends on ctags database, which is managed by vim-gutentags
 " following options must be set to ctags (see .ctags file)
 "You have to build your database with at least the following options:
@@ -241,18 +241,19 @@ Plugin 'vim-scripts/OmniCppComplete'
 
 " ------------------------------------------------------------------
 "  ctags management
-Plugin 'ludovicchabant/vim-gutentags'
-" disable default project roots
-let g:gutentags_add_default_project_roots = 0
-" define own project root to only use git
-let g:gutentags_project_root = ['.git']
-" create tag file in .git directory
-"let g:gutentags_ctags_tagfile = '.gutentagsfile'
-" generate tag file when open vim immediately
-let g:gutentags_generate_on_empty_buffer = 1
-" extend cscope
-"let g:gutentags_modules = ['ctags', 'cscope']
-" .ctags option file shall be copied to ~/.ctags
+"" DISABLE: to try coc.nvim
+"Plugin 'ludovicchabant/vim-gutentags'
+"" disable default project roots
+"let g:gutentags_add_default_project_roots = 0
+"" define own project root to only use git
+"let g:gutentags_project_root = ['.git']
+"" create tag file in .git directory
+""let g:gutentags_ctags_tagfile = '.gutentagsfile'
+"" generate tag file when open vim immediately
+"let g:gutentags_generate_on_empty_buffer = 1
+"" extend cscope
+""let g:gutentags_modules = ['ctags', 'cscope']
+"" .ctags option file shall be copied to ~/.ctags
 
 " ------------------------------------------------------------------
 "  enable vim shortcuts for cscope
